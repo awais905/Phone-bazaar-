@@ -5,138 +5,125 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Phone Bazaar</title>
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        background-color: #f8f8f8;
-        color: #333;
-    }
-    header {
-        background: #111;
-        color: #fff;
-        padding: 15px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    header h1 {
-        margin: 0;
-        font-size: 1.5em;
-    }
-    .lang-btn {
-        background: #ff6600;
-        border: none;
-        padding: 8px 15px;
-        color: #fff;
-        cursor: pointer;
-        border-radius: 5px;
-    }
-    .hero {
-        position: relative;
-        text-align: center;
-    }
-    .hero img {
-        width: 100%;
-        height: auto;
-    }
-    .products {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 15px;
-        padding: 20px;
-    }
-    .product {
-        background: white;
-        padding: 15px;
-        border-radius: 10px;
-        text-align: center;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-    .product img {
-        max-width: 100%;
-        height: auto;
-    }
-    footer {
-        background: #111;
-        color: white;
-        padding: 20px;
-        text-align: center;
-    }
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #0d0d0d;
+    color: white;
+  }
+  header {
+    background-color: #111;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #ffcc00;
+  }
+  nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  nav a:hover {
+    color: #ffcc00;
+  }
+  .lang-switch {
+    background: #ffcc00;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #1a1a1a, #000);
+    animation: fadeIn 1.5s ease;
+  }
+  .hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+  .hero p {
+    max-width: 600px;
+    margin-bottom: 20px;
+  }
+  .hero button {
+    background: #ffcc00;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .hero button:hover {
+    background: #ffaa00;
+  }
+  footer {
+    background: #111;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9rem;
+  }
+  @keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
 </style>
 </head>
 <body>
 
 <header>
-    <h1 id="site-title">Phone Bazaar</h1>
-    <button class="lang-btn" onclick="toggleLang()">اردو</button>
+  <h1 id="site-title">📱 Phone Bazaar</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Shop</a>
+    <a href="#">Contact</a>
+    <a href="#">About</a>
+  </nav>
+  <button class="lang-switch" onclick="toggleLanguage()">اردو</button>
 </header>
 
 <section class="hero">
-    <img src="girl-iphone16.jpg" alt="Girl holding iPhone 16 Pro Max">
-</section>
-
-<section class="products">
-    <div class="product">
-        <img src="iphone16.jpg" alt="iPhone 16 Pro Max">
-        <h2 id="p1-name">iPhone 16 Pro Max</h2>
-        <p id="p1-price">Price: Rs. 485,000</p>
-    </div>
-    <div class="product">
-        <img src="samsung-s24.jpg" alt="Samsung S24 Ultra">
-        <h2 id="p2-name">Samsung S24 Ultra</h2>
-        <p id="p2-price">Price: Rs. 420,000</p>
-    </div>
-    <div class="product">
-        <img src="vivo-v30.jpg" alt="Vivo V30">
-        <h2 id="p3-name">Vivo V30</h2>
-        <p id="p3-price">Price: Rs. 120,000</p>
-    </div>
+  <h2 id="hero-title">Latest iPhone 16 Pro Max Available</h2>
+  <p id="hero-text">Experience cutting-edge technology with the new iPhone 16 Pro Max. Pre-order now and be the first to own it in Pakistan.</p>
+  <button id="hero-btn">Order Now</button>
 </section>
 
 <footer>
-    <p id="contact">Contact: 03080432842</p>
+  <p id="footer-text">📞 Contact: 03080432842 | © 2025 Phone Bazaar</p>
 </footer>
 
 <script>
-let lang = "en";
-
-const content = {
-    en: {
-        siteTitle: "Phone Bazaar",
-        langBtn: "اردو",
-        p1Name: "iPhone 16 Pro Max",
-        p1Price: "Price: Rs. 485,000",
-        p2Name: "Samsung S24 Ultra",
-        p2Price: "Price: Rs. 420,000",
-        p3Name: "Vivo V30",
-        p3Price: "Price: Rs. 120,000",
-        contact: "Contact: 03080432842"
-    },
-    ur: {
-        siteTitle: "فون بازار",
-        langBtn: "English",
-        p1Name: "آئی فون 16 پرو میکس",
-        p1Price: "قیمت: ۴۸۵,۰۰۰ روپے",
-        p2Name: "سام سنگ S24 الٹرا",
-        p2Price: "قیمت: ۴۲۰,۰۰۰ روپے",
-        p3Name: "ویوو V30",
-        p3Price: "قیمت: ۱۲۰,۰۰۰ روپے",
-        contact: "رابطہ: 03080432842"
+  let lang = "en";
+  function toggleLanguage() {
+    if (lang === "en") {
+      document.getElementById("site-title").textContent = "📱 فون بازار";
+      document.getElementById("hero-title").textContent = "آئی فون 16 پرو میکس دستیاب ہے";
+      document.getElementById("hero-text").textContent = "جدید ترین ٹیکنالوجی کے ساتھ نیا آئی فون 16 پرو میکس حاصل کریں۔ ابھی آرڈر کریں اور پاکستان میں سب سے پہلے اس کے مالک بنیں۔";
+      document.getElementById("hero-btn").textContent = "آرڈر کریں";
+      document.getElementById("footer-text").textContent = "📞 رابطہ: 03080432842 | © 2025 فون بازار";
+      document.querySelector(".lang-switch").textContent = "English";
+      lang = "ur";
+    } else {
+      document.getElementById("site-title").textContent = "📱 Phone Bazaar";
+      document.getElementById("hero-title").textContent = "Latest iPhone 16 Pro Max Available";
+      document.getElementById("hero-text").textContent = "Experience cutting-edge technology with the new iPhone 16 Pro Max. Pre-order now and be the first to own it in Pakistan.";
+      document.getElementById("hero-btn").textContent = "Order Now";
+      document.getElementById("footer-text").textContent = "📞 Contact: 03080432842 | © 2025 Phone Bazaar";
+      document.querySelector(".lang-switch").textContent = "اردو";
+      lang = "en";
     }
-};
-
-function toggleLang() {
-    lang = (lang === "en") ? "ur" : "en";
-    document.getElementById("site-title").innerText = content[lang].siteTitle;
-    document.querySelector(".lang-btn").innerText = content[lang].langBtn;
-    document.getElementById("p1-name").innerText = content[lang].p1Name;
-    document.getElementById("p1-price").innerText = content[lang].p1Price;
-    document.getElementById("p2-name").innerText = content[lang].p2Name;
-    document.getElementById("p2-price").innerText = content[lang].p2Price;
-    document.getElementById("p3-name").innerText = content[lang].p3Name;
-    document.getElementById("p3-price").innerText = content[lang].p3Price;
-    document.getElementById("contact").innerText = content[lang].contact;
-}
+  }
 </script>
 
 </body>
