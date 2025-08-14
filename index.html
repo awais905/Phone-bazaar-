@@ -1,118 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Phone Bazaar</title>
-  <style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phone Bazaar</title>
+<style>
     body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #121212;
-      color: #fff;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background-color: #f8f8f8;
+        color: #333;
     }
     header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 30px;
-      background: linear-gradient(90deg, #ff9800, #e91e63);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        background: #111;
+        color: #fff;
+        padding: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
     header h1 {
-      margin: 0;
-      font-size: 24px;
-      color: white;
-    }
-    .right-corner {
-      font-size: 20px;
-      font-weight: bold;
-      background: linear-gradient(45deg, #ffeb3b, #ff5722);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
-    }
-    nav {
-      display: flex;
-      gap: 20px;
-    }
-    nav a, nav select {
-      background: #1f1f1f;
-      color: white;
-      padding: 10px 15px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
-      transition: 0.3s;
-    }
-    nav a:hover, nav select:hover {
-      background: #333;
-    }
-    .main {
-      text-align: center;
-      margin-top: 50px;
-    }
-    .main img {
-      width: 200px;
+        margin: 0;
+        font-size: 1.5em;
     }
     .lang-btn {
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-size: 20px;
+        background: #ff6600;
+        border: none;
+        padding: 8px 15px;
+        color: #fff;
+        cursor: pointer;
+        border-radius: 5px;
     }
-  </style>
+    .hero {
+        position: relative;
+        text-align: center;
+    }
+    .hero img {
+        width: 100%;
+        height: auto;
+    }
+    .products {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 15px;
+        padding: 20px;
+    }
+    .product {
+        background: white;
+        padding: 15px;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .product img {
+        max-width: 100%;
+        height: auto;
+    }
+    footer {
+        background: #111;
+        color: white;
+        padding: 20px;
+        text-align: center;
+    }
+</style>
 </head>
 <body>
-  <header>
-    <h1 id="title">📱 Phone Bazaar</h1>
-    <nav>
-      <select id="phoneDropdown">
-        <option value="" disabled selected>📱 Phones</option>
-        <option value="iphone">iPhone</option>
-        <option value="samsung">Samsung</option>
-        <option value="vivo">Vivo</option>
-      </select>
-      <a href="#">🛒 Cart</a>
-      <button class="lang-btn" onclick="setLanguage('en')">🇬🇧</button>
-      <button class="lang-btn" onclick="setLanguage('ur')">🇵🇰</button>
-    </nav>
-    <div class="right-corner">BHuTTa</div>
-  </header>
 
-  <div class="main">
-    <h2 id="welcomeText">Welcome to Phone Bazaar</h2>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Smartphone_icon.svg/800px-Smartphone_icon.svg.png" alt="Phone" />
-  </div>
+<header>
+    <h1 id="site-title">Phone Bazaar</h1>
+    <button class="lang-btn" onclick="toggleLang()">اردو</button>
+</header>
 
-  <script>
-    function setLanguage(lang) {
-      if(lang === 'en') {
-        document.getElementById('title').innerText = '📱 Phone Bazaar';
-        document.getElementById('welcomeText').innerText = 'Welcome to Phone Bazaar';
-        document.getElementById('phoneDropdown').options[0].text = '📱 Phones';
-        document.getElementById('phoneDropdown').options[1].text = 'iPhone';
-        document.getElementById('phoneDropdown').options[2].text = 'Samsung';
-        document.getElementById('phoneDropdown').options[3].text = 'Vivo';
-        document.querySelector('nav a').innerText = '🛒 Cart';
-      } else {
-        document.getElementById('title').innerText = '📱 فون بازار';
-        document.getElementById('welcomeText').innerText = 'فون بازار میں خوش آمدید';
-        document.getElementById('phoneDropdown').options[0].text = '📱 فونز';
-        document.getElementById('phoneDropdown').options[1].text = 'آئی فون';
-        document.getElementById('phoneDropdown').options[2].text = 'سیمسنگ';
-        document.getElementById('phoneDropdown').options[3].text = 'ویوو';
-        document.querySelector('nav a').innerText = '🛒 کارٹ';
-      }
+<section class="hero">
+    <img src="girl-iphone16.jpg" alt="Girl holding iPhone 16 Pro Max">
+</section>
+
+<section class="products">
+    <div class="product">
+        <img src="iphone16.jpg" alt="iPhone 16 Pro Max">
+        <h2 id="p1-name">iPhone 16 Pro Max</h2>
+        <p id="p1-price">Price: Rs. 485,000</p>
+    </div>
+    <div class="product">
+        <img src="samsung-s24.jpg" alt="Samsung S24 Ultra">
+        <h2 id="p2-name">Samsung S24 Ultra</h2>
+        <p id="p2-price">Price: Rs. 420,000</p>
+    </div>
+    <div class="product">
+        <img src="vivo-v30.jpg" alt="Vivo V30">
+        <h2 id="p3-name">Vivo V30</h2>
+        <p id="p3-price">Price: Rs. 120,000</p>
+    </div>
+</section>
+
+<footer>
+    <p id="contact">Contact: 03080432842</p>
+</footer>
+
+<script>
+let lang = "en";
+
+const content = {
+    en: {
+        siteTitle: "Phone Bazaar",
+        langBtn: "اردو",
+        p1Name: "iPhone 16 Pro Max",
+        p1Price: "Price: Rs. 485,000",
+        p2Name: "Samsung S24 Ultra",
+        p2Price: "Price: Rs. 420,000",
+        p3Name: "Vivo V30",
+        p3Price: "Price: Rs. 120,000",
+        contact: "Contact: 03080432842"
+    },
+    ur: {
+        siteTitle: "فون بازار",
+        langBtn: "English",
+        p1Name: "آئی فون 16 پرو میکس",
+        p1Price: "قیمت: ۴۸۵,۰۰۰ روپے",
+        p2Name: "سام سنگ S24 الٹرا",
+        p2Price: "قیمت: ۴۲۰,۰۰۰ روپے",
+        p3Name: "ویوو V30",
+        p3Price: "قیمت: ۱۲۰,۰۰۰ روپے",
+        contact: "رابطہ: 03080432842"
     }
+};
 
-    document.getElementById('phoneDropdown').addEventListener('change', function() {
-      const value = this.value;
-      if(value) {
-        alert('You selected: ' + value);
-      }
-    });
-  </script>
+function toggleLang() {
+    lang = (lang === "en") ? "ur" : "en";
+    document.getElementById("site-title").innerText = content[lang].siteTitle;
+    document.querySelector(".lang-btn").innerText = content[lang].langBtn;
+    document.getElementById("p1-name").innerText = content[lang].p1Name;
+    document.getElementById("p1-price").innerText = content[lang].p1Price;
+    document.getElementById("p2-name").innerText = content[lang].p2Name;
+    document.getElementById("p2-price").innerText = content[lang].p2Price;
+    document.getElementById("p3-name").innerText = content[lang].p3Name;
+    document.getElementById("p3-price").innerText = content[lang].p3Price;
+    document.getElementById("contact").innerText = content[lang].contact;
+}
+</script>
+
 </body>
 </html>
