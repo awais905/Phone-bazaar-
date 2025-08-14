@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Phone Bazzar - Best Mobile Prices in Pakistan</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+    header {
+      background-color: white;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #ddd;
+    }
+    header h1 {
+      color: #00b853;
+      margin: 0;
+      font-size: 24px;
+    }
+    .search-bar input {
+      padding: 8px;
+      width: 300px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    nav {
+      background-color: #00b853;
+      padding: 10px;
+    }
+    nav a {
+      color: white;
+      margin-right: 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .banner {
+      width: 100%;
+      height: 300px;
+      background: url('https://priceoye.pk/_next/image?url=%2Fimages%2Fbanner.jpg&w=1920&q=75') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 28px;
+      font-weight: bold;
+    }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    .product-card {
+      background-color: white;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .product-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: contain;
+    }
+    .product-card h3 {
+      font-size: 16px;
+      margin: 10px 0;
+    }
+    .product-card p {
+      color: #00b853;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .product-card button {
+      background-color: #00b853;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    .product-card button:hover {
+      background-color: #009943;
+    }
+    footer {
+      background-color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 14px;
+      color: #555;
+      border-top: 1px solid #ddd;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>📱 Phone Bazzar</h1>
+    <div class="search-bar">
+      <input type="text" placeholder="Search for mobiles..." />
+    </div>
+  </header>
+
+  <nav>
+    <a href="#">Mobiles</a>
+    <a href="#">Tablets</a>
+    <a href="#">Accessories</a>
+    <a href="cart.html">🛒 Cart</a>
+  </nav>
+
+  <div class="banner">
+    Welcome to Phone Bazzar
+  </div>
+
+  <section class="products">
+    <div class="product-card">
+      <img src="https://images.priceoye.pk/apple-iphone-14-pakistan-priceoye-9q50y.jpg" alt="iPhone 14">
+      <h3>Apple iPhone 14</h3>
+      <p>Rs. 345000</p>
+      <button onclick="addToCart('Apple iPhone 14', 345000, 'https://images.priceoye.pk/apple-iphone-14-pakistan-priceoye-9q50y.jpg')">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="https://images.priceoye.pk/samsung-galaxy-s23-pakistan-priceoye-m3x9j.jpg" alt="Samsung S23">
+      <h3>Samsung Galaxy S23</h3>
+      <p>Rs. 280000</p>
+      <button onclick="addToCart('Samsung Galaxy S23', 280000, 'https://images.priceoye.pk/samsung-galaxy-s23-pakistan-priceoye-m3x9j.jpg')">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="https://images.priceoye.pk/xiaomi-redmi-note-12-pakistan-priceoye-4jshg.jpg" alt="Xiaomi Redmi Note 12">
+      <h3>Xiaomi Redmi Note 12</h3>
+      <p>Rs. 65000</p>
+      <button onclick="addToCart('Xiaomi Redmi Note 12', 65000, 'https://images.priceoye.pk/xiaomi-redmi-note-12-pakistan-priceoye-4jshg.jpg')">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="https://images.priceoye.pk/vivo-v27e-pakistan-priceoye-fu0b0.jpg" alt="Vivo V27e">
+      <h3>Vivo V27e</h3>
+      <p>Rs. 85000</p>
+      <button onclick="addToCart('Vivo V27e', 85000, 'https://images.priceoye.pk/vivo-v27e-pakistan-priceoye-fu0b0.jpg')">Add to Cart</button>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Phone Bazzar | All Rights Reserved
+  </footer>
+
+  <script>
+    function addToCart(name, price, image) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      let product = { name, price, image, quantity: 1 };
+      
+      let existing = cart.find(item => item.name === name);
+      if (existing) {
+        existing.quantity++;
+      } else {
+        cart.push(product);
+      }
+      
+      localStorage.setItem('cart', JSON.stringify(cart));
+      alert(name + " added to cart!");
+    }
+  </script>
+
+</body>
+</html>
