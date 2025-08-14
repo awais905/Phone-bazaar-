@@ -3,141 +3,116 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Phone Bazzar - Best Mobile Prices in Pakistan</title>
+  <title>Phone Bazaar</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #00b853, #009943);
-      color: white;
-      text-align: center;
+      background: #121212;
+      color: #fff;
     }
-
     header {
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
-      padding: 30px 20px;
-      flex-wrap: wrap;
+      padding: 15px 30px;
+      background: linear-gradient(90deg, #ff9800, #e91e63);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
     }
     header h1 {
-      font-size: 40px;
-      margin-right: 20px;
-      font-weight: bold;
-      text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+      margin: 0;
+      font-size: 24px;
+      color: white;
     }
-    header img {
-      width: 120px;
-      height: auto;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    }
-
-    .buttons {
-      margin-top: 50px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-    }
-    .buttons button, .buttons a {
-      background-color: white;
-      color: #00b853;
-      padding: 20px 40px;
-      text-decoration: none;
+    .right-corner {
       font-size: 20px;
       font-weight: bold;
-      border-radius: 8px;
+      background: linear-gradient(45deg, #ffeb3b, #ff5722);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    }
+    nav {
+      display: flex;
+      gap: 20px;
+    }
+    nav a, nav select {
+      background: #1f1f1f;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
       transition: 0.3s;
+    }
+    nav a:hover, nav select:hover {
+      background: #333;
+    }
+    .main {
+      text-align: center;
+      margin-top: 50px;
+    }
+    .main img {
+      width: 200px;
+    }
+    .lang-btn {
+      background: none;
       border: none;
       cursor: pointer;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    }
-    .buttons button:hover, .buttons a:hover {
-      background-color: #009943;
-      color: white;
-      transform: scale(1.05);
-    }
-
-    /* Dropdown Styles */
-    .dropdown {
-      display: none;
-      flex-direction: column;
-      gap: 10px;
-      margin-top: 10px;
-    }
-    .dropdown a {
-      padding: 15px 30px;
-      background-color: white;
-      color: #00b853;
-      border-radius: 8px;
-      text-decoration: none;
-      font-size: 18px;
-      font-weight: bold;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      transition: 0.3s;
-    }
-    .dropdown a:hover {
-      background-color: #009943;
-      color: white;
-      transform: scale(1.05);
-    }
-
-    .payments {
-      margin-top: 60px;
-    }
-    .payments img {
-      width: 100px;
-      margin: 10px;
-      border-radius: 8px;
-      background-color: white;
-      padding: 5px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    }
-
-    footer {
-      margin-top: 50px;
-      padding: 20px;
-      background-color: rgba(0,0,0,0.2);
-      font-size: 14px;
+      font-size: 20px;
     }
   </style>
 </head>
 <body>
-
   <header>
-    <h1>📱 Phone Bazzar</h1>
-    <img src="https://cdn.pixabay.com/photo/2017/01/23/17/18/phone-2002030_1280.png" alt="Phone Image">
+    <h1 id="title">📱 Phone Bazaar</h1>
+    <nav>
+      <select id="phoneDropdown">
+        <option value="" disabled selected>📱 Phones</option>
+        <option value="iphone">iPhone</option>
+        <option value="samsung">Samsung</option>
+        <option value="vivo">Vivo</option>
+      </select>
+      <a href="#">🛒 Cart</a>
+      <button class="lang-btn" onclick="setLanguage('en')">🇬🇧</button>
+      <button class="lang-btn" onclick="setLanguage('ur')">🇵🇰</button>
+    </nav>
+    <div class="right-corner">BHuTTa</div>
   </header>
 
-  <div class="buttons">
-    <button onclick="toggleDropdown()">Mobile Phones</button>
-    <div class="dropdown" id="mobileDropdown">
-      <a href="iphone.html">iPhone</a>
-      <a href="samsung.html">Samsung</a>
-      <a href="vivo.html">Vivo</a>
-    </div>
-    <a href="tablets.html">Tablets</a>
-    <a href="cart.html">🛒 Cart</a>
+  <div class="main">
+    <h2 id="welcomeText">Welcome to Phone Bazaar</h2>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Smartphone_icon.svg/800px-Smartphone_icon.svg.png" alt="Phone" />
   </div>
-
-  <div class="payments">
-    <h2>We Accept</h2>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/JazzCash_Logo.png/320px-JazzCash_Logo.png" alt="JazzCash">
-    <img src="https://seeklogo.com/images/E/easypaisa-logo-7AB5BD5B04-seeklogo.com.png" alt="Easypaisa">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/PayPal.svg/512px-PayPal.svg.png" alt="PayPal">
-  </div>
-
-  <footer>
-    &copy; 2025 Phone Bazzar | All Rights Reserved
-  </footer>
 
   <script>
-    function toggleDropdown() {
-      let dropdown = document.getElementById("mobileDropdown");
-      dropdown.style.display = dropdown.style.display === "flex" ? "none" : "flex";
+    function setLanguage(lang) {
+      if(lang === 'en') {
+        document.getElementById('title').innerText = '📱 Phone Bazaar';
+        document.getElementById('welcomeText').innerText = 'Welcome to Phone Bazaar';
+        document.getElementById('phoneDropdown').options[0].text = '📱 Phones';
+        document.getElementById('phoneDropdown').options[1].text = 'iPhone';
+        document.getElementById('phoneDropdown').options[2].text = 'Samsung';
+        document.getElementById('phoneDropdown').options[3].text = 'Vivo';
+        document.querySelector('nav a').innerText = '🛒 Cart';
+      } else {
+        document.getElementById('title').innerText = '📱 فون بازار';
+        document.getElementById('welcomeText').innerText = 'فون بازار میں خوش آمدید';
+        document.getElementById('phoneDropdown').options[0].text = '📱 فونز';
+        document.getElementById('phoneDropdown').options[1].text = 'آئی فون';
+        document.getElementById('phoneDropdown').options[2].text = 'سیمسنگ';
+        document.getElementById('phoneDropdown').options[3].text = 'ویوو';
+        document.querySelector('nav a').innerText = '🛒 کارٹ';
+      }
     }
-  </script>
 
+    document.getElementById('phoneDropdown').addEventListener('change', function() {
+      const value = this.value;
+      if(value) {
+        alert('You selected: ' + value);
+      }
+    });
+  </script>
 </body>
 </html>
