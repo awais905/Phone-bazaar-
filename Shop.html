@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Latest Phones</title>
+    <link rel="stylesheet" href="style.css"> <!-- Reuse your existing style.css -->
+    <style>
+        /* Shop-specific styles */
+        .shop-container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+        .section-title {
+            font-size: 2em;
+            margin: 40px 0 20px;
+            text-align: center;
+            color: #ffcc66;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .product-card {
+            background: #1e1e1e;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            color: white;
+        }
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            background: #000;
+            border-radius: 8px;
+        }
+        .specs {
+            font-size: 0.9em;
+            margin: 10px 0;
+            color: #ccc;
+        }
+        .buy-btn {
+            background: #ffcc66;
+            color: #000;
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .lang-switcher {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: #333;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="shop.html" class="active">Shop</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <button class="lang-switcher" onclick="toggleLanguage()">اردو</button>
+    </header>
+
+    <div class="shop-container">
+
+        <!-- iPhone Section -->
+        <h2 class="section-title" data-en="Latest iPhones" data-ur="تازہ ترین آئی فونز">Latest iPhones</h2>
+        <div class="product-grid">
+            <div class="product-card" data-en-model="iPhone 15 Pro Max" data-ur-model="آئی فون 15 پرو میکس"
+                 data-en-spec="Processor: A17 Pro | RAM: 8GB | Storage: 256GB | Camera: 48MP | Battery: 4422mAh"
+                 data-ur-spec="پروسیسر: اے 17 پرو | ریم: 8 جی بی | اسٹوریج: 256 جی بی | کیمرہ: 48 میگا پکسل | بیٹری: 4422 ایم اے ایچ">
+                <img src="https://via.placeholder.com/250x200" alt="iPhone 15 Pro Max">
+                <h3>iPhone 15 Pro Max</h3>
+                <p class="specs">Processor: A17 Pro | RAM: 8GB | Storage: 256GB | Camera: 48MP | Battery: 4422mAh</p>
+                <a href="#" class="buy-btn" data-en="Buy Now" data-ur="ابھی خریدیں">Buy Now</a>
+            </div>
+
+            <div class="product-card" data-en-model="iPhone 15 Pro" data-ur-model="آئی فون 15 پرو"
+                 data-en-spec="Processor: A17 Pro | RAM: 8GB | Storage: 128GB | Camera: 48MP | Battery: 4422mAh"
+                 data-ur-spec="پروسیسر: اے 17 پرو | ریم: 8 جی بی | اسٹوریج: 128 جی بی | کیمرہ: 48 میگا پکسل | بیٹری: 4422 ایم اے ایچ">
+                <img src="https://via.placeholder.com/250x200" alt="iPhone 15 Pro">
+                <h3>iPhone 15 Pro</h3>
+                <p class="specs">Processor: A17 Pro | RAM: 8GB | Storage: 128GB | Camera: 48MP | Battery: 4422mAh</p>
+                <a href="#" class="buy-btn" data-en="Buy Now" data-ur="ابھی خریدیں">Buy Now</a>
+            </div>
+
+            <div class="product-card" data-en-model="iPhone 15 Plus" data-ur-model="آئی فون 15 پلس"
+                 data-en-spec="Processor: A16 Bionic | RAM: 6GB | Storage: 128GB | Camera: 48MP | Battery: 4383mAh"
+                 data-ur-spec="پروسیسر: اے 16 بایونک | ریم: 6 جی بی | اسٹوریج: 128 جی بی | کیمرہ: 48 میگا پکسل | بیٹری: 4383 ایم اے ایچ">
+                <img src="https://via.placeholder.com/250x200" alt="iPhone 15 Plus">
+                <h3>iPhone 15 Plus</h3>
+                <p class="specs">Processor: A16 Bionic | RAM: 6GB | Storage: 128GB | Camera: 48MP | Battery: 4383mAh</p>
+                <a href="#" class="buy-btn" data-en="Buy Now" data-ur="ابھی خریدیں">Buy Now</a>
+            </div>
+
+            <div class="product-card" data-en-model="iPhone 15" data-ur-model="آئی فون 15"
+                 data-en-spec="Processor: A16 Bionic | RAM: 6GB | Storage: 128GB | Camera: 48MP | Battery: 4383mAh"
+                 data-ur-spec="پروسیسر: اے 16 بایونک | ریم: 6 جی بی | اسٹوریج: 128 جی بی | کیمرہ: 48 میگا پکسل | بیٹری: 4383 ایم اے ایچ">
+                <img src="https://via.placeholder.com/250x200" alt="iPhone 15">
+                <h3>iPhone 15</h3>
+                <p class="specs">Processor: A16 Bionic | RAM: 6GB | Storage: 128GB | Camera: 48MP | Battery: 4383mAh</p>
+                <a href="#" class="buy-btn" data-en="Buy Now" data-ur="ابھی خریدیں">Buy Now</a>
+            </div>
+
+            <div class="product-card" data-en-model="iPhone 14 Pro Max" data-ur-model="آئی فون 14 پرو میکس"
+                 data-en-spec="Processor: A16 Bionic | RAM: 6GB | Storage: 256GB | Camera: 48MP | Battery: 4323mAh"
+                 data-ur-spec="پروسیسر: اے 16 بایونک | ریم: 6 جی بی | اسٹوریج: 256 جی بی | کیمرہ: 48 میگا پکسل | بیٹری: 4323 ایم اے ایچ">
+                <img src="https://via.placeholder.com/250x200" alt="iPhone 14 Pro Max">
+                <h3>iPhone 14 Pro Max</h3>
+                <p class="specs">Processor: A16 Bionic | RAM: 6GB | Storage: 256GB | Camera: 48MP | Battery: 4323mAh</p>
+                <a href="#" class="buy-btn" data-en="Buy Now" data-ur="ابھی خریدیں">Buy Now</a>
+            </div>
+        </div>
+
+        <!-- Samsung Section -->
+        <h2 class="section-title" data-en="Latest Samsung Phones" data-ur="تازہ ترین سیمسنگ فونز">Latest Samsung Phones</h2>
+        <div class="product-grid">
+            <div class="product-card" data-en-model="Samsung Galaxy S24 Ultra" data-ur-model="سیمسنگ گلیکسی ایس24 الٹرا"
+                 data-en-spec="Processor: Snapdragon 8 Gen 3 | RAM: 12GB | Storage: 512GB | Camera: 200MP | Battery: 5000mAh"
+                 data-ur-spec="پروسیسر: سنیپ ڈریگن 8 جن 3 | ریم: 12 جی بی | اسٹوریج: 512 جی بی | کیمرہ: 200 میگا پکسل | بیٹری: 5000 ایم اے ایچ">
+                <img src="https://via.placeholder.com/250x200" alt="Samsung Galaxy S24 Ultra">
+                <h3>Samsung Galaxy S24 Ultra</h3>
+                <p class="specs">Processor: Snapdragon 8 Gen 3 | RAM: 12GB | Storage: 512GB | Camera: 200MP | Battery: 5000mAh</p>
+                <a href="#" class="buy-btn" data-en="Buy Now" data-ur="ابھی خریدیں">Buy Now</a>
+            </div>
+
+            <div class="product-card" data-en-model="Samsung Galaxy S24+" data-ur-model="سیمسنگ گلیکسی ایس24 پلس"
+                 data-en-spec="Processor: Snapdragon 8 Gen 3 | RAM: 8GB | Storage: 256GB | Camera: 50MP | Battery: 4500mAh"
+                 data-ur-spec="پروسیسر: سنیپ ڈریگن 8 جن 3 | ریم: 8 جی بی | اسٹوریج: 256 جی بی | کیمرہ: 50 میگا پکسل | بیٹری: 4500 ایم اے ایچ">
+                <img src="https://via.placeholder.com/250x200" alt="Samsung Galaxy S24+">
+                <h3>Samsung Galaxy S24+</h3>
+                <p class="specs">Processor: Snapdragon 8 Gen 3 | RAM: 8GB | Storage: 256GB | Camera: 50MP | Battery: 4500mAh</p>
+                <a href="#" class="buy-btn" data-en="Buy Now" data-ur="ابھی خریدیں">Buy Now</a>
+            </div>
+
+            <div class="product-card" data-en-model="Samsung Galaxy S24" data-ur-model="سیمسنگ گلیکسی ایس24"
+                 data-en-spec="Processor: Snapdragon 8 Gen 3 | RAM: 8GB | Storage: 128GB | Camera: 50MP | Battery: 4500mAh"
+                 data-ur-spec="پروسیسر: سنیپ ڈریگن 8 جن 3 | ریم: 8 جی بی | اسٹوریج: 128 جی بی | کیمرہ: 50 میگا پکسل | بیٹری: 4500 ایم اے ایچ">
+                <img src="https://via.placeholder.com/250x200" alt="Samsung Galaxy S24">
+                <h3>Samsung Galaxy S24</h3>
+                <p class="specs">Processor: Snapdragon 8 Gen 3 | RAM: 8GB | Storage: 128GB | Camera: 50MP | Battery: 4500mAh</p>
+                <a href="#" class="buy-btn" data-en="Buy Now" data-ur="ابھی خریدیں">Buy Now</a>
+            </div>
+
+            <div class="product-card" data-en-model="Samsung Galaxy Z Fold5" data-ur-model="سیمسنگ گلیکسی زی فولڈ5"
+                 data-en-spec="Processor: Snapdragon 8 Gen 2 | RAM: 12GB | Storage: 512GB | Camera: 50MP | Battery: 4400mAh"
+                 data-ur-spec="پروسیسر: سنیپ ڈریگن 8 جن 2 | ریم: 12 جی بی | اسٹوریج: 512 جی بی | کیمرہ: 50 میگا پکسل | بیٹری: 4400 ایم اے ایچ">
+                <img src="https://via.placeholder.com/250x200" alt="Samsung Galaxy Z Fold5">
+                <h3>Samsung Galaxy Z Fold5</h3>
+                <p class="specs">Processor: Snapdragon 8 Gen 2 | RAM: 12GB | Storage: 512GB | Camera: 50MP | Battery: 4400mAh</p>
+                <a href="#" class="buy-btn" data-en="Buy Now" data-ur="ابھی خریدیں">Buy Now</a>
+            </div>
+
+            <div class="product-card" data-en-model="Samsung Galaxy Z Flip5" data-ur-model="سیمسنگ گلیکسی زی فلپ5"
+                 data-en-spec="Processor: Snapdragon 8 Gen 2 | RAM: 8GB | Storage: 256GB | Camera: 12MP | Battery: 3700mAh"
+                 data-ur-spec="پروسیسر: سنیپ ڈریگن 8 جن 2 | ریم: 8 جی بی | اسٹوریج: 256 جی بی | کیمرہ: 12 میگا پکسل | بیٹری: 3700 ایم اے ایچ">
+                <img src="https://via.placeholder.com/250x200" alt="Samsung Galaxy Z Flip5">
+                <h3>Samsung Galaxy Z Flip5</h3>
+                <p class="specs">Processor: Snapdragon 8 Gen 2 | RAM: 8GB | Storage: 256GB | Camera: 12MP | Battery: 3700mAh</p>
+                <a href="#" class="buy-btn" data-en="Buy Now" data-ur="ابھی خریدیں">Buy Now</a>
+            </div>
+        </div>
+
+        <!-- Vivo Section -->
+        <h2 class="section-title" data-en="Latest Vivo Phones" data-ur="تازہ ترین ویوو فونز">Latest Vivo Phones</h2>
+        <div class="product-grid">
+            <div class="product-card" data-en-model="Vivo X100 Pro" data-ur-model="ویوو ایکس100 پرو"
+                 data-en-spec="Processor: Snapdragon 8 Gen 2 | RAM: 12GB | Storage: 512GB | Camera: 200MP | Battery: 4700mAh"
+                 data-ur-spec="پروسیسر: سنیپ ڈریگن 8 جن 2 | ریم: 12 جی بی | اسٹوریج: 512 جی بی | کیمرہ: 200 میگا پکسل | بیٹری: 4700 ایم اے ایچ">
+                <img src="https://via.placeholder.com/250x200" alt="Vivo X100 Pro">
+                <h3>Vivo X100 Pro</h3>
+                <p class="specs">Processor: Snapdragon 8 Gen 2 | RAM: 12GB | Storage: 512GB | Camera: 200MP | Battery: 4700mAh</p>
+                <a href="#" class="buy-btn" data-en="Buy Now" data-ur="ابھی خریدیں">Buy Now</a>
+            </div>
+
+            <div class="product-card" data-en-model="Vivo X100" data-ur-model="ویوو ایکس100"
+                 data-en-spec="Processor: Snapdragon 8 Gen 2 | RAM: 8GB | Storage: 256GB | Camera: 108MP | Battery: 4500mAh"
+                 data-ur-spec="پروسیسر: سنیپ ڈریگن 8 جن 2 | ریم: 8 جی بی | اسٹوریج: 256 جی بی | کیمرہ: 108 میگا پکسل | بیٹری: 4500 ایم اے ایچ">
+                <img src="https://via.placeholder.com/250x200" alt="Vivo X100">
+                <h3>Vivo X100</h3>
+                <p class="specs">Processor: Snapdragon 8 Gen 2 | RAM: 8GB | Storage: 256GB | Camera: 108MP | Battery: 4500mAh</p>
+                <a href="#" class="buy-btn" data-en="Buy Now" data-ur="ابھی خریدیں">Buy Now</a>
+            </div>
+
+            <div class="product-card" data-en-model="Vivo V30 Pro" data-ur-model="ویوو وی30 پرو"
+                 data-en-spec="Processor: MediaTek Dimensity 9200 | RAM: 12GB | Storage: 256GB | Camera: 64MP | Battery: 4700mAh"
+                 data-ur-spec="پروسیسر: میڈیا ٹیک ڈائمنسٹی 9200 | ریم: 12 جی بی | اسٹوریج: 256 جی بی | کیمرہ: 64 میگا پکسل | بیٹری: 4700 ایم اے ایچ">
+                <img src="https://via.placeholder.com/250x200" alt="Vivo V30 Pro">
+                <h3>Vivo V30 Pro</h3>
+                <p class="specs">Processor: MediaTek Dimensity 9200 | RAM: 12GB | Storage: 256GB | Camera: 64MP | Battery: 4700mAh</p>
+                <a href="#" class="buy-btn" data-en="Buy Now" data-ur="ابھی خریدیں">Buy Now</a>
+            </div>
+
+            <div class="product-card" data-en-model="Vivo V30" data-ur-model="ویوو وی30"
+                 data-en-spec="Processor: MediaTek Dimensity 9200 | RAM: 8GB | Storage: 128GB | Camera: 64MP | Battery: 4500mAh"
+                 data-ur-spec="پروسیسر: میڈیا ٹیک ڈائمنسٹی 9200 | ریم: 8 جی بی | اسٹوریج: 128 جی بی | کیمرہ: 64 میگا پکسل | بیٹری: 4500 ایم اے ایچ">
+                <
