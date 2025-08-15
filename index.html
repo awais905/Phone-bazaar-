@@ -1,130 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Phone Bazaar</title>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background-color: #0d0d0d;
-    color: white;
-  }
-  header {
-    background-color: #111;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  header h1 {
-    margin: 0;
-    font-size: 1.5rem;
-    color: #ffcc00;
-  }
-  nav a {
-    color: white;
-    margin: 0 15px;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  nav a:hover {
-    color: #ffcc00;
-  }
-  .lang-switch {
-    background: #ffcc00;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-    font-weight: bold;
-  }
-  .hero {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 60px 20px;
-    background: linear-gradient(135deg, #1a1a1a, #000);
-    animation: fadeIn 1.5s ease;
-  }
-  .hero h2 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-  }
-  .hero p {
-    max-width: 600px;
-    margin-bottom: 20px;
-  }
-  .hero button {
-    background: #ffcc00;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-  .hero button:hover {
-    background: #ffaa00;
-  }
-  footer {
-    background: #111;
-    text-align: center;
-    padding: 15px;
-    font-size: 0.9rem;
-  }
-  @keyframes fadeIn {
-    from {opacity: 0; transform: translateY(20px);}
-    to {opacity: 1; transform: translateY(0);}
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phone Bazzar</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { margin:0; font-family: Arial, sans-serif; background:#121212; color:#fff; }
+    header { padding: 15px; background: #1f1f1f; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+    nav { display:flex; flex-wrap: wrap; gap:10px; }
+    nav a { color:#fff; margin: 0 5px; text-decoration: none; padding-bottom: 3px; }
+    nav a.active { border-bottom: 2px solid #f39c12; }
+    button#lang-toggle { background:#f39c12; border:none; padding:5px 10px; cursor:pointer; color:#000; font-weight:bold; border-radius:5px; }
+    main { padding: 20px; }
+    .hero { text-align:center; padding:50px 20px; }
+    .hero h1 { font-size:36px; margin-bottom:10px; }
+    .hero p { font-size:18px; color:#ccc; }
+    .section { margin-top:40px; }
+    footer { text-align:center; padding:20px; background:#1f1f1f; margin-top:40px; color:#ccc; }
+
+    /* Responsive */
+    @media(max-width:768px){ .hero h1 { font-size:28px; } .hero p { font-size:16px; } nav { justify-content:center; } }
+    @media(max-width:480px){ .hero h1 { font-size:22px; } .hero p { font-size:14px; } }
+  </style>
 </head>
 <body>
+  <!-- Header -->
+  <header>
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About</a>
+      <a href="menu.html">Menu</a>
+      <a href="shop.html">Shop</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button id="lang-toggle">EN/UR</button>
+  </header>
 
-<header>
-  <h1 id="site-title">📱 Phone Bazaar</h1>
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">Shop</a>
-    <a href="#">Contact</a>
-    <a href="#">About</a>
-  </nav>
-  <button class="lang-switch" onclick="toggleLanguage()">اردو</button>
-</header>
+  <!-- Hero Section -->
+  <main>
+    <div class="hero">
+      <h1 data-en="Welcome to Phone Bazzar" data-ur="فون بزار میں خوش آمدید">Welcome to Phone Bazzar</h1>
+      <p data-en="Find the latest Apple, Samsung, and Xiaomi phones here!" data-ur="یہاں تازہ ترین ایپل، سام سنگ، اور ژیاؤمی فونز حاصل کریں!">Find the latest Apple, Samsung, and Xiaomi phones here!</p>
+    </div>
 
-<section class="hero">
-  <h2 id="hero-title">Latest iPhone 16 Pro Max Available</h2>
-  <p id="hero-text">Experience cutting-edge technology with the new iPhone 16 Pro Max. Pre-order now and be the first to own it in Pakistan.</p>
-  <button id="hero-btn">Order Now</button>
-</section>
+    <!-- Featured Section -->
+    <div class="section">
+      <h2 data-en="Featured Phones" data-ur="نمایاں فونز">Featured Phones</h2>
+      <p data-en="Check out our top-selling phones!" data-ur="ہمارے سب سے زیادہ فروخت ہونے والے فونز دیکھیں!">Check out our top-selling phones!</p>
+      <!-- You can add some featured product cards here similar to shop.html -->
+    </div>
+  </main>
 
-<footer>
-  <p id="footer-text">📞 Contact: 03080432842 | © 2025 Phone Bazaar</p>
-</footer>
+  <!-- Footer -->
+  <footer>
+    <p data-en="© 2025 Phone Bazzar. All rights reserved." data-ur="© 2025 فون بزار۔ جملہ حقوق محفوظ ہیں۔">
+      © 2025 Phone Bazzar. All rights reserved.
+    </p>
+  </footer>
 
-<script>
-  let lang = "en";
-  function toggleLanguage() {
-    if (lang === "en") {
-      document.getElementById("site-title").textContent = "📱 فون بازار";
-      document.getElementById("hero-title").textContent = "آئی فون 16 پرو میکس دستیاب ہے";
-      document.getElementById("hero-text").textContent = "جدید ترین ٹیکنالوجی کے ساتھ نیا آئی فون 16 پرو میکس حاصل کریں۔ ابھی آرڈر کریں اور پاکستان میں سب سے پہلے اس کے مالک بنیں۔";
-      document.getElementById("hero-btn").textContent = "آرڈر کریں";
-      document.getElementById("footer-text").textContent = "📞 رابطہ: 03080432842 | © 2025 فون بازار";
-      document.querySelector(".lang-switch").textContent = "English";
-      lang = "ur";
-    } else {
-      document.getElementById("site-title").textContent = "📱 Phone Bazaar";
-      document.getElementById("hero-title").textContent = "Latest iPhone 16 Pro Max Available";
-      document.getElementById("hero-text").textContent = "Experience cutting-edge technology with the new iPhone 16 Pro Max. Pre-order now and be the first to own it in Pakistan.";
-      document.getElementById("hero-btn").textContent = "Order Now";
-      document.getElementById("footer-text").textContent = "📞 Contact: 03080432842 | © 2025 Phone Bazaar";
-      document.querySelector(".lang-switch").textContent = "اردو";
-      lang = "en";
-    }
-  }
-</script>
+  <!-- Scripts -->
+  <script>
+    // Active menu highlight
+    const navLinks = document.querySelectorAll('nav a');
+    const currentPage = window.location.pathname.split("/").pop();
+    navLinks.forEach(link => {
+      if(link.getAttribute('href') === currentPage){
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
 
+    // Language toggle
+    const toggleBtn = document.getElementById('lang-toggle');
+    toggleBtn.addEventListener('click', () => {
+      document.querySelectorAll('[data-en]').forEach(el => {
+        const currentLang = el.textContent === el.dataset.en ? 'en' : 'ur';
+        el.textContent = currentLang === 'en' ? el.dataset.ur : el.dataset.en;
+      });
+    });
+  </script>
 </body>
 </html>
