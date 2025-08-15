@@ -7,21 +7,53 @@
   <link rel="stylesheet" href="style.css">
   <style>
     body { margin:0; font-family: Arial, sans-serif; background:#121212; color:#fff; }
-    header { padding: 15px; background: #1f1f1f; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+    header { padding: 15px 20px; background: #1f1f1f; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;}
     nav { display:flex; flex-wrap: wrap; gap:10px; }
-    nav a { color:#fff; margin: 0 5px; text-decoration: none; padding-bottom: 3px; }
+    nav a { color:#fff; margin: 0 5px; text-decoration: none; padding-bottom: 3px; transition: color 0.3s; }
+    nav a:hover { color:#f39c12; }
     nav a.active { border-bottom: 2px solid #f39c12; }
     button#lang-toggle { background:#f39c12; border:none; padding:5px 10px; cursor:pointer; color:#000; font-weight:bold; border-radius:5px; }
+
     main { padding: 20px; }
-    .hero { text-align:center; padding:50px 20px; }
-    .hero h1 { font-size:36px; margin-bottom:10px; }
-    .hero p { font-size:18px; color:#ccc; }
+    .hero { display:flex; flex-wrap: wrap; align-items:center; justify-content: space-between; padding:40px 20px; background:#1a1a1a; border-radius:10px; margin-bottom:40px; }
+    .hero-text { flex:1; min-width:250px; margin-right:20px; }
+    .hero-text h1 { font-size:36px; margin-bottom:15px; }
+    .hero-text p { font-size:18px; color:#ccc; }
+    .hero-image { flex:1; text-align:center; min-width:250px; }
+    .hero-image img { max-width:100%; border-radius:15px; }
+
+    /* Slider Section */
     .section { margin-top:40px; }
+    .section h2 { font-size:28px; margin-bottom:15px; text-align:center; }
+    .slider-container { position: relative; margin:20px 0; }
+    .products { display:flex; overflow-x:auto; gap:20px; scroll-behavior:smooth; padding-bottom:10px; }
+    .products::-webkit-scrollbar { height:8px; }
+    .products::-webkit-scrollbar-thumb { background:#f39c12; border-radius:5px; }
+    .product-card { min-width:200px; max-width:220px; background:#1f1f1f; border-radius:10px; padding:15px; text-align:center; flex-shrink:0; transition: transform 0.3s; }
+    .product-card:hover { transform: translateY(-5px); }
+    .product-card img { width:100%; border-radius:10px; margin-bottom:10px; }
+    .product-card h3 { font-size:18px; margin-bottom:5px; }
+    .product-card p { margin-bottom:10px; color:#ccc; }
+    .product-card button { padding:8px 12px; background:#f39c12; border:none; color:#000; font-weight:bold; border-radius:5px; cursor:pointer; }
+
+    .arrow { position:absolute; top:50%; transform: translateY(-50%); background:#f39c12; color:#000; border:none; font-size:24px; padding:5px 10px; cursor:pointer; border-radius:50%; z-index:1; }
+    .arrow.left { left:-10px; }
+    .arrow.right { right:-10px; }
+
     footer { text-align:center; padding:20px; background:#1f1f1f; margin-top:40px; color:#ccc; }
 
-    /* Responsive */
-    @media(max-width:768px){ .hero h1 { font-size:28px; } .hero p { font-size:16px; } nav { justify-content:center; } }
-    @media(max-width:480px){ .hero h1 { font-size:22px; } .hero p { font-size:14px; } }
+    @media(max-width:768px){ 
+      .hero { flex-direction: column; text-align:center; }
+      .hero-text { margin-right:0; }
+      .hero-text h1 { font-size:28px; }
+      .hero-text p { font-size:16px; }
+      .arrow { display:none; }
+    }
+    @media(max-width:480px){
+      .hero-text h1 { font-size:22px; }
+      .hero-text p { font-size:14px; }
+      .product-card { min-width:160px; max-width:180px; }
+    }
   </style>
 </head>
 <body>
@@ -40,15 +72,62 @@
   <!-- Hero Section -->
   <main>
     <div class="hero">
-      <h1 data-en="Welcome to Phone Bazzar" data-ur="فون بزار میں خوش آمدید">Welcome to Phone Bazzar</h1>
-      <p data-en="Find the latest Apple, Samsung, and Xiaomi phones here!" data-ur="یہاں تازہ ترین ایپل، سام سنگ، اور ژیاؤمی فونز حاصل کریں!">Find the latest Apple, Samsung, and Xiaomi phones here!</p>
+      <div class="hero-text">
+        <h1 data-en="Welcome to Phone Bazzar" data-ur="فون بزار میں خوش آمدید">Welcome to Phone Bazzar</h1>
+        <p data-en="Find the latest Apple, Samsung, and Xiaomi phones here!" data-ur="یہاں تازہ ترین ایپل، سام سنگ، اور ژیاؤمی فونز حاصل کریں!">Find the latest Apple, Samsung, and Xiaomi phones here!</p>
+      </div>
+      <div class="hero-image">
+        <img src="images/iphone14.png" alt="Latest iPhone">
+      </div>
     </div>
 
-    <!-- Featured Section -->
+    <!-- Slider Section for Latest Models -->
     <div class="section">
-      <h2 data-en="Featured Phones" data-ur="نمایاں فونز">Featured Phones</h2>
-      <p data-en="Check out our top-selling phones!" data-ur="ہمارے سب سے زیادہ فروخت ہونے والے فونز دیکھیں!">Check out our top-selling phones!</p>
-      <!-- You can add some featured product cards here similar to shop.html -->
+      <h2 data-en="Latest Models" data-ur="تازہ ترین ماڈلز">Latest Models</h2>
+      <div class="slider-container">
+        <button class="arrow left">&#10094;</button>
+        <div class="products">
+          <div class="product-card">
+            <img src="images/iphone14.png" alt="iPhone 14">
+            <h3 data-en="iPhone 14" data-ur="آئی فون 14">iPhone 14</h3>
+            <p data-en="Price: PKR 250,000" data-ur="قیمت: 250,000 روپے">Price: PKR 250,000</p>
+            <button data-en="Buy Now" data-ur="اب خریدیں">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="images/iphone13.png" alt="iPhone 13">
+            <h3 data-en="iPhone 13" data-ur="آئی فون 13">iPhone 13</h3>
+            <p data-en="Price: PKR 200,000" data-ur="قیمت: 200,000 روپے">Price: PKR 200,000</p>
+            <button data-en="Buy Now" data-ur="اب خریدیں">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="images/samsung-s23.png" alt="Samsung S23">
+            <h3 data-en="Samsung S23" data-ur="سام سنگ S23">Samsung S23</h3>
+            <p data-en="Price: PKR 180,000" data-ur="قیمت: 180,000 روپے">Price: PKR 180,000</p>
+            <button data-en="Buy Now" data-ur="اب خریدیں">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="images/mi13.png" alt="Xiaomi 13">
+            <h3 data-en="Xiaomi 13" data-ur="ژیاؤمی 13">Xiaomi 13</h3>
+            <p data-en="Price: PKR 120,000" data-ur="قیمت: 120,000 روپے">Price: PKR 120,000</p>
+            <button data-en="Buy Now" data-ur="اب خریدیں">Buy Now</button>
+          </div>
+        </div>
+        <button class="arrow right">&#10095;</button>
+      </div>
+
+      <!-- View All Button -->
+      <div style="text-align:center; margin-top:15px;">
+        <a href="shop.html" style="
+          display:inline-block;
+          background:#f39c12;
+          color:#000;
+          font-weight:bold;
+          padding:10px 20px;
+          border-radius:8px;
+          text-decoration:none;
+          transition: background 0.3s;
+        " data-en="View All" data-ur="تمام دیکھیں">View All</a>
+      </div>
     </div>
   </main>
 
@@ -79,6 +158,16 @@
         const currentLang = el.textContent === el.dataset.en ? 'en' : 'ur';
         el.textContent = currentLang === 'en' ? el.dataset.ur : el.dataset.en;
       });
+    });
+
+    // Slider arrows
+    document.querySelectorAll('.slider-container').forEach(slider => {
+      const left = slider.querySelector('.arrow.left');
+      const right = slider.querySelector('.arrow.right');
+      const container = slider.querySelector('.products');
+
+      left.addEventListener('click', () => { container.scrollBy({ left: -220, behavior: 'smooth' }); });
+      right.addEventListener('click', () => { container.scrollBy({ left: 220, behavior: 'smooth' }); });
     });
   </script>
 </body>
