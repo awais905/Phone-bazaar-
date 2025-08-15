@@ -1,155 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Phone Bazzar - Shop</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    body { background-color: #121212; color: #fff; font-family: Arial, sans-serif; margin:0; }
-    header { padding: 15px; background: #1f1f1f; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;}
-    nav { display:flex; flex-wrap: wrap; gap:10px;}
-    nav a { color: #fff; margin: 0 5px; text-decoration: none; }
-    nav a.active { border-bottom: 2px solid #f39c12; }
-    button#lang-toggle { background: #f39c12; border: none; padding: 5px 10px; cursor: pointer; color:#000; font-weight:bold; border-radius:5px; }
-    main { padding: 20px; }
-    h1.section-title { margin-top: 40px; font-size: 28px; text-align: center; }
-    .slider-container { position: relative; margin: 20px 0; }
-    .products { display: flex; overflow-x: auto; gap: 20px; scroll-behavior: smooth; padding-bottom:10px; }
-    .products::-webkit-scrollbar { height: 8px; }
-    .products::-webkit-scrollbar-thumb { background: #f39c12; border-radius: 5px; }
-    .product-card { min-width: 200px; max-width: 220px; background: #1f1f1f; border-radius: 10px; padding: 15px; text-align: center; flex-shrink:0; transition: transform 0.3s; }
-    .product-card:hover { transform: translateY(-5px); }
-    .product-card img { width: 100%; border-radius: 10px; }
-    .product-card h2 { margin: 10px 0 5px; font-size: 18px; }
-    .product-card p { margin: 5px 0; }
-    .product-card button { margin-top: 10px; padding: 8px 12px; background: #f39c12; border: none; cursor: pointer; font-weight: bold; color:#000; border-radius:5px; }
-    .arrow { position: absolute; top: 50%; transform: translateY(-50%); background: #f39c12; color:#000; border: none; font-size: 24px; padding: 5px 10px; cursor: pointer; border-radius:50%; z-index:1; }
-    .arrow.left { left: -10px; }
-    .arrow.right { right: -10px; }
-    footer { text-align: center; padding: 20px; background: #1f1f1f; margin-top: 40px; }
-
-    /* Responsive */
-    @media(max-width:768px){
-      .product-card { min-width: 160px; max-width: 180px; }
-      .arrow { display: none; }
-      nav { justify-content:center;}
-    }
-    @media(max-width:480px){
-      .section-title { font-size: 22px; }
-      .product-card { min-width: 140px; max-width: 160px; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Bazzar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #000;
+            color: #fff;
+        }
+        header {
+            position: sticky;
+            top: 0;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            z-index: 1000;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: gold;
+        }
+        nav a {
+            color: white;
+            margin-left: 1.5rem;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        nav a:hover {
+            color: gold;
+        }
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            height: 100vh;
+            background: linear-gradient(to bottom, #000, #111);
+            padding: 2rem;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: gold;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            color: #ccc;
+            max-width: 600px;
+            margin-bottom: 2rem;
+        }
+        .hero img {
+            max-width: 300px;
+            margin-bottom: 2rem;
+            filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+        }
+        .btn-gold {
+            background-color: gold;
+            color: black;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .btn-gold:hover {
+            background-color: transparent;
+            color: gold;
+            border: 2px solid gold;
+        }
+        .deal-section {
+            text-align: center;
+            padding: 3rem 1rem;
+            background-color: #111;
+        }
+        .deal-section h2 {
+            font-size: 2rem;
+            color: gold;
+            margin-bottom: 1rem;
+        }
+        .deal-section p {
+            font-size: 1.2rem;
+            color: #ccc;
+            margin-bottom: 1rem;
+        }
+        .countdown {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: gold;
+        }
+        footer {
+            background-color: #000;
+            padding: 2rem;
+            text-align: center;
+            color: #777;
+        }
+        footer a {
+            color: gold;
+            text-decoration: none;
+            margin: 0 0.5rem;
+        }
+    </style>
 </head>
 <body>
-  <!-- Header -->
-  <header>
+
+<header>
+    <div class="logo">Phone Bazzar</div>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="menu.html">Menu</a>
-      <a href="shop.html" class="active">Shop</a>
-      <a href="contact.html">Contact</a>
+        <a href="shop.html">Shop</a>
+        <a href="brands.html">Brands</a>
+        <a href="deals.html">Deals</a>
+        <a href="contact.html">Contact</a>
     </nav>
-    <button id="lang-toggle">EN/UR</button>
-  </header>
+</header>
 
-  <!-- Shop Section -->
-  <main>
-    <!-- Apple Section -->
-    <h1 class="section-title" data-en="Apple Phones" data-ur="ایپل فونز">Apple Phones</h1>
-    <div class="slider-container">
-      <button class="arrow left">&#10094;</button>
-      <div class="products">
-        <div class="product-card">
-          <img src="images/iphone14.png" alt="iPhone 14">
-          <h2 data-en="iPhone 14" data-ur="آئی فون 14">iPhone 14</h2>
-          <p data-en="Price: PKR 250,000" data-ur="قیمت: 250,000 روپے">Price: PKR 250,000</p>
-          <button data-en="Buy Now" data-ur="اب خریدیں">Buy Now</button>
-        </div>
-        <div class="product-card">
-          <img src="images/iphone13.png" alt="iPhone 13">
-          <h2 data-en="iPhone 13" data-ur="آئی فون 13">iPhone 13</h2>
-          <p data-en="Price: PKR 200,000" data-ur="قیمت: 200,000 روپے">Price: PKR 200,000</p>
-          <button data-en="Buy Now" data-ur="اب خریدیں">Buy Now</button>
-        </div>
-        <!-- Add 3 more Apple products -->
-      </div>
-      <button class="arrow right">&#10095;</button>
-    </div>
+<section class="hero">
+    <h1>Luxury Smartphones at Your Fingertips</h1>
+    <p>Discover the latest from Apple, Samsung, OnePlus, and more — curated for those who demand excellence.</p>
+    <img src="https://www.pngmart.com/files/23/iPhone-14-PNG-File.png" alt="Premium Phone">
+    <button class="btn-gold" onclick="window.location.href='shop.html'">Explore All Products</button>
+</section>
 
-    <!-- Samsung Section -->
-    <h1 class="section-title" data-en="Samsung Phones" data-ur="سام سنگ فونز">Samsung Phones</h1>
-    <div class="slider-container">
-      <button class="arrow left">&#10094;</button>
-      <div class="products">
-        <div class="product-card">
-          <img src="images/samsung-s23.png" alt="Samsung S23">
-          <h2 data-en="Samsung S23" data-ur="سام سنگ S23">Samsung S23</h2>
-          <p data-en="Price: PKR 180,000" data-ur="قیمت: 180,000 روپے">Price: PKR 180,000</p>
-          <button data-en="Buy Now" data-ur="اب خریدیں">Buy Now</button>
-        </div>
-        <div class="product-card">
-          <img src="images/samsung-s22.png" alt="Samsung S22">
-          <h2 data-en="Samsung S22" data-ur="سام سنگ S22">Samsung S22</h2>
-          <p data-en="Price: PKR 150,000" data-ur="قیمت: 150,000 روپے">Price: PKR 150,000</p>
-          <button data-en="Buy Now" data-ur="اب خریدیں">Buy Now</button>
-        </div>
-        <!-- Add 3 more Samsung products -->
-      </div>
-      <button class="arrow right">&#10095;</button>
-    </div>
+<section class="deal-section">
+    <h2>Deal of the Day</h2>
+    <p>Save big on the iPhone 17 Pro Max — today only!</p>
+    <div class="countdown" id="countdown"></div>
+</section>
 
-    <!-- Xiaomi Section -->
-    <h1 class="section-title" data-en="Xiaomi Phones" data-ur="ژیاؤمی فونز">Xiaomi Phones</h1>
-    <div class="slider-container">
-      <button class="arrow left">&#10094;</button>
-      <div class="products">
-        <div class="product-card">
-          <img src="images/mi13.png" alt="Xiaomi 13">
-          <h2 data-en="Xiaomi 13" data-ur="ژیاؤمی 13">Xiaomi 13</h2>
-          <p data-en="Price: PKR 120,000" data-ur="قیمت: 120,000 روپے">Price: PKR 120,000</p>
-          <button data-en="Buy Now" data-ur="اب خریدیں">Buy Now</button>
-        </div>
-        <div class="product-card">
-          <img src="images/mi12.png" alt="Xiaomi 12">
-          <h2 data-en="Xiaomi 12" data-ur="ژیاؤمی 12">Xiaomi 12</h2>
-          <p data-en="Price: PKR 100,000" data-ur="قیمت: 100,000 روپے">Price: PKR 100,000</p>
-          <button data-en="Buy Now" data-ur="اب خریدیں">Buy Now</button>
-        </div>
-        <!-- Add 3 more Xiaomi products -->
-      </div>
-      <button class="arrow right">&#10095;</button>
-    </div>
-  </main>
-
-  <!-- Footer -->
-  <footer>
-    <p data-en="© 2025 Phone Bazzar. All rights reserved." data-ur="© 2025 فون بزار۔ جملہ حقوق محفوظ ہیں۔">
-      © 2025 Phone Bazzar. All rights reserved.
+<footer>
+    <p>&copy; 2025 Phone Bazzar. All Rights Reserved.</p>
+    <p>
+        <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
     </p>
-  </footer>
+</footer>
 
-  <!-- Scripts -->
-  <script>
-    // Language toggle
-    const toggleBtn = document.getElementById('lang-toggle');
-    toggleBtn.addEventListener('click', () => {
-      document.querySelectorAll('[data-en]').forEach(el => {
-        const currentLang = el.textContent === el.dataset.en ? 'en' : 'ur';
-        el.textContent = currentLang === 'en' ? el.dataset.ur : el.dataset.en;
-      });
-    });
+<script>
+    function startCountdown(duration) {
+        const countdownEl = document.getElementById("countdown");
+        let timer = duration, hours, minutes, seconds;
+        setInterval(() => {
+            hours = parseInt(timer / 3600, 10);
+            minutes = parseInt((timer % 3600) / 60, 10);
+            seconds = parseInt(timer % 60, 10);
+            hours = hours < 10 ? "0" + hours : hours;
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+            countdownEl.textContent = `${hours}:${minutes}:${seconds}`;
+            if (--timer < 0) {
+                countdownEl.textContent = "Deal Expired!";
+            }
+        }, 1000);
+    }
+    startCountdown(8 * 3600); // 8-hour deal
+</script>
 
-    // Slider arrows
-    document.querySelectorAll('.slider-container').forEach(slider => {
-      const left = slider.querySelector('.arrow.left');
-      const right = slider.querySelector('.arrow.right');
-      const container = slider.querySelector('.products');
-
-      left.addEventListener('click', () => { container.scrollBy({ left: -220, behavior: 'smooth' }); });
-      right.addEventListener('click', () => { container.scrollBy({ left: 220, behavior: 'smooth' }); });
-    });
-  </script>
 </body>
 </html>
