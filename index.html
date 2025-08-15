@@ -1,193 +1,258 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Phone Bazzar — iPhone 17 Pro Max</title>
-  <meta name="description" content="Phone Bazzar — Premium smartphones with best prices. iPhone, Samsung, Google Pixel." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-
-  <style>
-    :root{
-      --bg:#0f0f11;
-      --card:#181a1f;
-      --muted:#a9b0bd;
-      --text:#f5f7fb;
-      --accent:#4b8cff;
-      --accent-2:#26d07c;
-      --radius:18px;
-      --shadow:0 10px 30px rgba(0,0,0,.35);
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,Segoe UI,Roboto,Arial,Helvetica,sans-serif}
-    a{color:inherit;text-decoration:none}
-    .container{max-width:1200px;margin:0 auto;padding:18px 20px 60px}
-
-    /* Header */
-    .nav{
-      display:flex;align-items:center;justify-content:space-between;
-      padding:10px 0;
-    }
-    .brand{font-weight:800;letter-spacing:.5px;font-size:1.35rem}
-    .links{display:flex;gap:22px;align-items:center}
-    .chip{background:var(--card);padding:10px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.06)}
-    .lang-btn{cursor:pointer;user-select:none}
-
-    /* HERO */
-    .hero{
-      display:flex;flex-direction:column;align-items:center;justify-content:center;
-      text-align:center; gap:18px; padding:42px 0 28px;
-    }
-    .hero-figure{
-      width:min(560px, 90vw);
-      position:relative;
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-    }
-    .hero-figure img{
-      position:relative; z-index:1; width:100%; height:auto; display:block; object-fit:contain;
-      filter: drop-shadow(0 30px 60px rgba(0,0,0,.55));
-      border-radius:var(--radius);
-    }
-    .hero h1{font-size:clamp(1.8rem, 3.6vw, 2.6rem); margin:6px 0 4px}
-    .muted{color:var(--muted)}
-    .cta{
-      display:flex; gap:12px; flex-wrap:wrap; align-items:center; justify-content:center; margin-top:2px;
-    }
-    .btn{
-      padding:12px 18px; border-radius:12px; font-weight:700; border:1px solid transparent;
-      background:var(--card);
-    }
-    .btn-primary{ background:linear-gradient(135deg, var(--accent), #7aa8ff); color:#0b0f17 }
-    .btn-outline{ border-color:rgba(255,255,255,.12); background:transparent; color:var(--text) }
-    .btn:hover{ transform:translateY(-1px); transition:transform .15s ease }
-
-    /* Sections */
-    .section{margin-top:50px}
-    .grid{display:grid; gap:18px}
-    @media(min-width:720px){ .grid{ grid-template-columns: repeat(3, 1fr); } }
-
-    .card{
-      background:var(--card); border:1px solid rgba(255,255,255,.06);
-      border-radius:var(--radius); padding:16px; box-shadow:var(--shadow);
-    }
-    .product{
-      display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; text-align:center;
-      min-height:250px;
-    }
-    .product img{ width:150px; height:auto; object-fit:contain; filter: drop-shadow(0 10px 30px rgba(0,0,0,.5)); }
-    .product h3{ margin:4px 0 0 }
-
-    /* Footer */
-    footer{ margin-top:60px; color:var(--muted); font-size:.92rem; text-align:center }
-
-    /* Bilingual helpers */
-    [data-i18n]{ transition:opacity .15s ease }
-    .rtl{ direction:rtl }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Bazzar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #000;
+            color: #fff;
+        }
+        header {
+            position: sticky;
+            top: 0;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            z-index: 1000;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: gold;
+        }
+        nav a {
+            color: white;
+            margin-left: 1.5rem;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        nav a:hover {
+            color: gold;
+        }
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 4rem 2rem;
+            background-color: #000;
+        }
+        .hero img {
+            max-width: 400px;
+            width: 100%;
+            border-radius: 20px;
+            margin-bottom: 2rem;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            color: gold;
+        }
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 1rem auto;
+            color: #ccc;
+        }
+        .buttons {
+            margin-top: 2rem;
+        }
+        .btn {
+            padding: 0.8rem 1.5rem;
+            border: 2px solid gold;
+            border-radius: 25px;
+            margin: 0 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .btn.gold {
+            background-color: gold;
+            color: black;
+        }
+        .btn.gold:hover {
+            background-color: transparent;
+            color: gold;
+        }
+        .btn.transparent {
+            background-color: transparent;
+            color: gold;
+        }
+        .btn.transparent:hover {
+            background-color: gold;
+            color: black;
+        }
+        .brands {
+            display: flex;
+            justify-content: center;
+            padding: 2rem 1rem;
+            gap: 2rem;
+        }
+        .brands img {
+            width: 100px;
+            filter: brightness(0) invert(1);
+            transition: filter 0.3s;
+        }
+        .brands img:hover {
+            filter: brightness(0) saturate(100%) invert(69%) sepia(61%) saturate(636%) hue-rotate(9deg) brightness(103%) contrast(101%);
+        }
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+        }
+        .product {
+            background-color: #111;
+            padding: 1rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .product img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .product:hover {
+            transform: translateY(-5px);
+        }
+        .price {
+            color: gold;
+            font-weight: 700;
+            margin-top: 0.5rem;
+        }
+        /* Deal of the Day */
+        .deal {
+            text-align: center;
+            padding: 3rem 2rem;
+            background-color: #111;
+            margin: 2rem 0;
+        }
+        .deal h2 {
+            color: gold;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .deal img {
+            max-width: 300px;
+            border-radius: 15px;
+            margin-bottom: 1rem;
+        }
+        .countdown {
+            font-size: 1.5rem;
+            color: #fff;
+            margin: 1rem 0;
+        }
+        footer {
+            background-color: #000;
+            padding: 2rem;
+            text-align: center;
+            color: #777;
+        }
+        footer a {
+            color: gold;
+            text-decoration: none;
+            margin: 0 0.5rem;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <!-- Header -->
-    <header class="nav">
-      <div class="brand">Phone Bazzar</div>
-      <nav class="links">
-        <a class="chip" href="shop.html" data-i18n="nav_shop">Shop</a>
-        <a class="chip" href="contact.html" data-i18n="nav_contact">Contact</a>
-        <span class="chip lang-btn" id="langToggle">EN / اردو</span>
-      </nav>
-    </header>
 
-    <!-- HERO -->
-    <section class="hero" id="hero">
-      <div class="hero-figure">
-        <img src="https://images.unsplash.com/photo-1610649233584-c7614e2e7c3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80" 
-             alt="Girl holding iPhone 17 Pro Max">
-      </div>
-      <h1 data-i18n="iphone_title">iPhone 17 Pro Max</h1>
-      <p class="muted" data-i18n="iphone_tag">Performance. Camera. Battery. Everything Pro.</p>
-      <div class="cta">
-        <a class="btn btn-primary" href="order.html" data-i18n="btn_order">Place Order</a>
-        <a class="btn btn-outline" href="shop.html" data-i18n="btn_viewall">View All</a>
-      </div>
-    </section>
+<header>
+    <div class="logo">Phone Bazzar</div>
+    <nav>
+        <a href="shop.html">Shop</a>
+        <a href="brands.html">Brands</a>
+        <a href="deals.html">Deals</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
 
-    <!-- Brands -->
-    <section class="section" id="brands">
-      <div class="grid" style="grid-template-columns:repeat(3,1fr)">
-        <div class="card" style="text-align:center;font-weight:700">Apple</div>
-        <div class="card" style="text-align:center;font-weight:700">Samsung</div>
-        <div class="card" style="text-align:center;font-weight:700">Google</div>
-      </div>
-    </section>
+<section class="hero">
+    <img src="https://via.placeholder.com/400x500?text=Model+Holding+Phone" alt="Hero Model Holding Phone">
+    <h1>Innovation in Your Hands</h1>
+    <p>Experience the future of smartphones with premium models from Apple, Samsung, OnePlus, and more — all in one place.</p>
+    <div class="buttons">
+        <button class="btn gold">Shop Now</button>
+        <button class="btn transparent">View All</button>
+    </div>
+</section>
 
-    <!-- Shop Preview -->
-    <section class="section" id="shop">
-      <h2 style="margin:0 0 14px" data-i18n="shop_title">Shop</h2>
-      <div class="grid">
-        <div class="card product">
-          <img src="img/iphone17pm.png" alt="iPhone 17 Pro Max">
-          <h3>iPhone 17 Pro Max</h3>
-          <a class="btn btn-outline" href="product-iphone-17-pro-max.html" data-i18n="btn_view">View</a>
-        </div>
-        <div class="card product">
-          <img src="img/galaxy-s24.png" alt="Samsung Galaxy S24">
-          <h3>Samsung Galaxy S24</h3>
-          <a class="btn btn-outline" href="product-galaxy-s24.html" data-i18n="btn_view">View</a>
-        </div>
-        <div class="card product">
-          <img src="img/pixel-8-pro.png" alt="Google Pixel 8 Pro">
-          <h3>Google Pixel 8 Pro</h3>
-          <a class="btn btn-outline" href="product-pixel-8-pro.html" data-i18n="btn_view">View</a>
-        </div>
-      </div>
-    </section>
+<section class="brands">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Samsung">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/OnePlus_logo.svg" alt="OnePlus">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Xiaomi_logo.svg" alt="Xiaomi">
+</section>
 
-    <footer>© <span id="year"></span> Phone Bazzar — All rights reserved.</footer>
-  </div>
+<section class="products">
+    <div class="product">
+        <img src="https://via.placeholder.com/300x400?text=iPhone+17+Pro+Max" alt="iPhone 17 Pro Max">
+        <h3>iPhone 17 Pro Max</h3>
+        <div class="price">$1,299</div>
+    </div>
+    <div class="product">
+        <img src="https://via.placeholder.com/300x400?text=Samsung+S24+Ultra" alt="Samsung S24 Ultra">
+        <h3>Samsung S24 Ultra</h3>
+        <div class="price">$1,199</div>
+    </div>
+    <div class="product">
+        <img src="https://via.placeholder.com/300x400?text=OnePlus+12" alt="OnePlus 12">
+        <h3>OnePlus 12</h3>
+        <div class="price">$899</div>
+    </div>
+    <div class="product">
+        <img src="https://via.placeholder.com/300x400?text=Xiaomi+14+Ultra" alt="Xiaomi 14 Ultra">
+        <h3>Xiaomi 14 Ultra</h3>
+        <div class="price">$799</div>
+    </div>
+</section>
 
-  <!-- Language Switch -->
-  <script>
-    const dict = {
-      ur: {
-        nav_shop:"دکان",
-        nav_contact:"رابطہ",
-        iphone_title:"آئی فون 17 پرو میکس",
-        iphone_tag:"پرفارمنس، کیمرا، بیٹری — ہر چیز پرو۔",
-        btn_order:"آرڈر کریں",
-        btn_viewall:"سب دیکھیں",
-        shop_title:"دکان",
-        btn_view:"دیکھیں"
-      },
-      en: {
-        nav_shop:"Shop",
-        nav_contact:"Contact",
-        iphone_title:"iPhone 17 Pro Max",
-        iphone_tag:"Performance. Camera. Battery. Everything Pro.",
-        btn_order:"Place Order",
-        btn_viewall:"View All",
-        shop_title:"Shop",
-        btn_view:"View"
-      }
-    };
-    const els = [...document.querySelectorAll("[data-i18n]")];
-    const toggle = document.getElementById("langToggle");
-    const html = document.documentElement;
+<section class="deal">
+    <h2>Deal of the Day</h2>
+    <img src="https://via.placeholder.com/300x400?text=iPhone+15+Pro+Deal" alt="Deal of the Day">
+    <h3>iPhone 15 Pro — Only $999</h3>
+    <div class="countdown" id="countdown">Loading...</div>
+    <button class="btn gold">Grab Deal</button>
+</section>
 
-    function setLang(code){
-      const t = dict[code];
-      els.forEach(el => el.textContent = t[el.getAttribute("data-i18n")] || el.textContent);
-      html.lang = code === "ur" ? "ur" : "en";
-      document.body.classList.toggle("rtl", code === "ur");
-      localStorage.setItem("pb_lang", code);
+<footer>
+    <p>&copy; 2025 Phone Bazzar. All Rights Reserved.</p>
+    <p>
+        <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+    </p>
+</footer>
+
+<script>
+    // Countdown Timer
+    function startCountdown(endTime) {
+        function updateTimer() {
+            const now = new Date().getTime();
+            const distance = endTime - now;
+
+            if (distance < 0) {
+                document.getElementById("countdown").innerHTML = "Deal Expired";
+                return;
+            }
+
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML =
+                `${hours}h ${minutes}m ${seconds}s`;
+        }
+        setInterval(updateTimer, 1000);
     }
-    const saved = localStorage.getItem("pb_lang") || "en";
-    setLang(saved);
-    toggle.addEventListener("click", ()=> setLang(document.documentElement.lang === "en" ? "ur" : "en"));
+    const endTime = new Date().getTime() + (8 * 60 * 60 * 1000); // 8 hours from now
+    startCountdown(endTime);
+</script>
 
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
