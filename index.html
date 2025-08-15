@@ -6,7 +6,7 @@
   <title>Phone Bazzar</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    body { margin:0; font-family: Arial, sans-serif; background:#121212; color:#fff; }
+    body { margin:0; font-family: Arial, sans-serif; background:#121212; color:#fff; display:flex; flex-direction:column; min-height:100vh; }
     header { padding: 15px 20px; background: #1f1f1f; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;}
     nav { display:flex; flex-wrap: wrap; gap:10px; }
     nav a { color:#fff; margin: 0 5px; text-decoration: none; padding-bottom: 3px; transition: color 0.3s; }
@@ -14,31 +14,13 @@
     nav a.active { border-bottom: 2px solid #f39c12; }
     button#lang-toggle { background:#f39c12; border:none; padding:5px 10px; cursor:pointer; color:#000; font-weight:bold; border-radius:5px; }
 
-    main { padding: 20px; }
-    .hero { display:flex; flex-wrap: wrap; align-items:center; justify-content: space-between; padding:40px 20px; background:#1a1a1a; border-radius:10px; margin-bottom:40px; }
-    .hero-text { flex:1; min-width:250px; margin-right:20px; }
-    .hero-text h1 { font-size:36px; margin-bottom:15px; }
-    .hero-text p { font-size:18px; color:#ccc; line-height:1.6; }
-    .hero-image { flex:1; text-align:center; min-width:250px; }
-    .hero-image img { max-width:100%; border-radius:15px; }
+    main { flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:20px; }
+    h1 { font-size:32px; font-weight:bold; margin-bottom:15px; }
+    p { font-size:18px; color:#ccc; margin-bottom:25px; line-height:1.6; max-width:600px; }
+    .buttons a, .buttons button { padding:15px 30px; border-radius:8px; font-weight:bold; cursor:pointer; text-decoration:none; border:none; background:#f39c12; color:#000; font-size:18px; transition: background 0.3s; }
+    .buttons a:hover, .buttons button:hover { background:#e08e0b; }
 
-    .buttons { margin-top:20px; display:flex; gap:15px; flex-wrap: wrap; }
-    .buttons a, .buttons button { padding:10px 20px; border-radius:8px; font-weight:bold; cursor:pointer; text-decoration:none; border:none; transition: background 0.3s; }
-    .buttons a { background:#f39c12; color:#000; }
-    .buttons button { background:#f39c12; color:#000; }
-
-    footer { text-align:center; padding:20px; background:#1f1f1f; margin-top:40px; color:#ccc; }
-
-    @media(max-width:768px){ 
-      .hero { flex-direction: column; text-align:center; }
-      .hero-text { margin-right:0; }
-      .hero-text h1 { font-size:28px; }
-      .hero-text p { font-size:16px; }
-    }
-    @media(max-width:480px){
-      .hero-text h1 { font-size:22px; }
-      .hero-text p { font-size:14px; }
-    }
+    footer { text-align:center; padding:20px; background:#1f1f1f; color:#ccc; }
   </style>
 </head>
 <body>
@@ -47,37 +29,31 @@
     <nav>
       <a href="index.html" class="active">Home</a>
       <a href="about.html">About</a>
-      <a href="menu.html">Menu</a>
       <a href="shop.html">Shop</a>
       <a href="contact.html">Contact</a>
     </nav>
     <button id="lang-toggle">EN/UR</button>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Main Section -->
   <main>
-    <div class="hero">
-      <div class="hero-text">
-        <h1 data-en="iPhone 17 Pro Max" data-ur="آئی فون 17 پرو میکس">iPhone 17 Pro Max</h1>
-        <p data-en="Experience the ultimate innovation with iPhone 17 Pro Max. Featuring a stunning display, ultra-fast processor, advanced camera system, and longer battery life, this phone redefines the smartphone experience. Enjoy seamless performance, incredible photography, and cutting-edge technology all in one sleek design." 
-           data-ur="آئی فون 17 پرو میکس کے ساتھ جدید ترین ٹیکنالوجی کا تجربہ کریں۔ شاندار ڈسپلے، انتہائی تیز پروسیسر، جدید کیمرا سسٹم اور طویل بیٹری لائف کے ساتھ یہ فون اسمارٹ فون کے تجربے کو نئی شکل دیتا ہے۔ بہترین کارکردگی، حیرت انگیز فوٹوگرافی اور جدید ٹیکنالوجی ایک ہی خوبصورت ڈیزائن میں۔">
-           Experience the ultimate innovation with iPhone 17 Pro Max. Featuring a stunning display, ultra-fast processor, advanced camera system, and longer battery life, this phone redefines the smartphone experience. Enjoy seamless performance, incredible photography, and cutting-edge technology all in one sleek design.
-        </p>
-        <div class="buttons">
-          <button data-en="Place an Order" data-ur="آرڈر کریں">Place an Order</button>
-          <a href="shop.html" data-en="View All" data-ur="تمام دیکھیں">View All</a>
-        </div>
-      </div>
-      <div class="hero-image">
-        <img src="images/iphone17pro.png" alt="iPhone 17 Pro Max">
-      </div>
+    <h1 data-en="Latest iPhone 17 Pro Max Available" data-ur="تازہ ترین آئی فون 17 پرو میکس دستیاب">
+      Latest iPhone 17 Pro Max Available
+    </h1>
+    <p data-en="Experience cutting-edge technology with the new iPhone 17 Pro Max. Pre-order now and be the first to own it in Pakistan."
+       data-ur="آئی فون 17 پرو میکس کے ساتھ جدید ترین ٹیکنالوجی کا تجربہ کریں۔ ابھی پری آرڈر کریں اور پاکستان میں پہلے مالک بنیں۔">
+      Experience cutting-edge technology with the new iPhone 17 Pro Max. Pre-order now and be the first to own it in Pakistan.
+    </p>
+    <div class="buttons">
+      <button data-en="Order Now" data-ur="آرڈر کریں">Order Now</button>
+      <a href="shop.html" data-en="View All" data-ur="تمام دیکھیں">View All</a>
     </div>
   </main>
 
   <!-- Footer -->
   <footer>
-    <p data-en="© 2025 Phone Bazzar. All rights reserved." data-ur="© 2025 فون بزار۔ جملہ حقوق محفوظ ہیں۔">
-      © 2025 Phone Bazzar. All rights reserved.
+    <p data-en="Contact: 03080432842 | © 2025 Phone Bazzar" data-ur="رابطہ: 03080432842 | © 2025 فون بزار">
+      Contact: 03080432842 | © 2025 Phone Bazzar
     </p>
   </footer>
 
