@@ -1,83 +1,193 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Phone Bazzar</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Phone Bazzar — iPhone 17 Pro Max</title>
+  <meta name="description" content="Phone Bazzar — Premium smartphones with best prices. iPhone, Samsung, Google Pixel." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
   <style>
-    body { margin:0; font-family: Arial, sans-serif; background:#121212; color:#fff; display:flex; flex-direction:column; min-height:100vh; }
-    header { padding: 15px 20px; background: #1f1f1f; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;}
-    nav { display:flex; flex-wrap: wrap; gap:10px; }
-    nav a { color:#fff; margin: 0 5px; text-decoration: none; padding-bottom: 3px; transition: color 0.3s; }
-    nav a:hover { color:#f39c12; }
-    nav a.active { border-bottom: 2px solid #f39c12; }
-    button#lang-toggle { background:#f39c12; border:none; padding:5px 10px; cursor:pointer; color:#000; font-weight:bold; border-radius:5px; }
+    :root{
+      --bg:#0f0f11;
+      --card:#181a1f;
+      --muted:#a9b0bd;
+      --text:#f5f7fb;
+      --accent:#4b8cff;
+      --accent-2:#26d07c;
+      --radius:18px;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,Segoe UI,Roboto,Arial,Helvetica,sans-serif}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1200px;margin:0 auto;padding:18px 20px 60px}
 
-    main { flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:20px; }
-    h1 { font-size:32px; font-weight:bold; margin-bottom:15px; }
-    p { font-size:18px; color:#ccc; margin-bottom:25px; line-height:1.6; max-width:600px; }
-    .buttons a, .buttons button { padding:15px 30px; border-radius:8px; font-weight:bold; cursor:pointer; text-decoration:none; border:none; background:#f39c12; color:#000; font-size:18px; transition: background 0.3s; }
-    .buttons a:hover, .buttons button:hover { background:#e08e0b; }
+    /* Header */
+    .nav{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:10px 0;
+    }
+    .brand{font-weight:800;letter-spacing:.5px;font-size:1.35rem}
+    .links{display:flex;gap:22px;align-items:center}
+    .chip{background:var(--card);padding:10px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.06)}
+    .lang-btn{cursor:pointer;user-select:none}
 
-    footer { text-align:center; padding:20px; background:#1f1f1f; color:#ccc; }
+    /* HERO */
+    .hero{
+      display:flex;flex-direction:column;align-items:center;justify-content:center;
+      text-align:center; gap:18px; padding:42px 0 28px;
+    }
+    .hero-figure{
+      width:min(560px, 90vw);
+      position:relative;
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+    .hero-figure img{
+      position:relative; z-index:1; width:100%; height:auto; display:block; object-fit:contain;
+      filter: drop-shadow(0 30px 60px rgba(0,0,0,.55));
+      border-radius:var(--radius);
+    }
+    .hero h1{font-size:clamp(1.8rem, 3.6vw, 2.6rem); margin:6px 0 4px}
+    .muted{color:var(--muted)}
+    .cta{
+      display:flex; gap:12px; flex-wrap:wrap; align-items:center; justify-content:center; margin-top:2px;
+    }
+    .btn{
+      padding:12px 18px; border-radius:12px; font-weight:700; border:1px solid transparent;
+      background:var(--card);
+    }
+    .btn-primary{ background:linear-gradient(135deg, var(--accent), #7aa8ff); color:#0b0f17 }
+    .btn-outline{ border-color:rgba(255,255,255,.12); background:transparent; color:var(--text) }
+    .btn:hover{ transform:translateY(-1px); transition:transform .15s ease }
+
+    /* Sections */
+    .section{margin-top:50px}
+    .grid{display:grid; gap:18px}
+    @media(min-width:720px){ .grid{ grid-template-columns: repeat(3, 1fr); } }
+
+    .card{
+      background:var(--card); border:1px solid rgba(255,255,255,.06);
+      border-radius:var(--radius); padding:16px; box-shadow:var(--shadow);
+    }
+    .product{
+      display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; text-align:center;
+      min-height:250px;
+    }
+    .product img{ width:150px; height:auto; object-fit:contain; filter: drop-shadow(0 10px 30px rgba(0,0,0,.5)); }
+    .product h3{ margin:4px 0 0 }
+
+    /* Footer */
+    footer{ margin-top:60px; color:var(--muted); font-size:.92rem; text-align:center }
+
+    /* Bilingual helpers */
+    [data-i18n]{ transition:opacity .15s ease }
+    .rtl{ direction:rtl }
   </style>
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <nav>
-      <a href="index.html" class="active">Home</a>
-      <a href="about.html">About</a>
-      <a href="shop.html">Shop</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-    <button id="lang-toggle">EN/UR</button>
-  </header>
+  <div class="container">
+    <!-- Header -->
+    <header class="nav">
+      <div class="brand">Phone Bazzar</div>
+      <nav class="links">
+        <a class="chip" href="shop.html" data-i18n="nav_shop">Shop</a>
+        <a class="chip" href="contact.html" data-i18n="nav_contact">Contact</a>
+        <span class="chip lang-btn" id="langToggle">EN / اردو</span>
+      </nav>
+    </header>
 
-  <!-- Main Section -->
-  <main>
-    <h1 data-en="Latest iPhone 17 Pro Max Available" data-ur="تازہ ترین آئی فون 17 پرو میکس دستیاب">
-      Latest iPhone 17 Pro Max Available
-    </h1>
-    <p data-en="Experience cutting-edge technology with the new iPhone 17 Pro Max. Pre-order now and be the first to own it in Pakistan."
-       data-ur="آئی فون 17 پرو میکس کے ساتھ جدید ترین ٹیکنالوجی کا تجربہ کریں۔ ابھی پری آرڈر کریں اور پاکستان میں پہلے مالک بنیں۔">
-      Experience cutting-edge technology with the new iPhone 17 Pro Max. Pre-order now and be the first to own it in Pakistan.
-    </p>
-    <div class="buttons">
-      <button data-en="Order Now" data-ur="آرڈر کریں">Order Now</button>
-      <a href="shop.html" data-en="View All" data-ur="تمام دیکھیں">View All</a>
-    </div>
-  </main>
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="hero-figure">
+        <img src="https://images.unsplash.com/photo-1610649233584-c7614e2e7c3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80" 
+             alt="Girl holding iPhone 17 Pro Max">
+      </div>
+      <h1 data-i18n="iphone_title">iPhone 17 Pro Max</h1>
+      <p class="muted" data-i18n="iphone_tag">Performance. Camera. Battery. Everything Pro.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="order.html" data-i18n="btn_order">Place Order</a>
+        <a class="btn btn-outline" href="shop.html" data-i18n="btn_viewall">View All</a>
+      </div>
+    </section>
 
-  <!-- Footer -->
-  <footer>
-    <p data-en="Contact: 03080432842 | © 2025 Phone Bazzar" data-ur="رابطہ: 03080432842 | © 2025 فون بزار">
-      Contact: 03080432842 | © 2025 Phone Bazzar
-    </p>
-  </footer>
+    <!-- Brands -->
+    <section class="section" id="brands">
+      <div class="grid" style="grid-template-columns:repeat(3,1fr)">
+        <div class="card" style="text-align:center;font-weight:700">Apple</div>
+        <div class="card" style="text-align:center;font-weight:700">Samsung</div>
+        <div class="card" style="text-align:center;font-weight:700">Google</div>
+      </div>
+    </section>
 
-  <!-- Scripts -->
+    <!-- Shop Preview -->
+    <section class="section" id="shop">
+      <h2 style="margin:0 0 14px" data-i18n="shop_title">Shop</h2>
+      <div class="grid">
+        <div class="card product">
+          <img src="img/iphone17pm.png" alt="iPhone 17 Pro Max">
+          <h3>iPhone 17 Pro Max</h3>
+          <a class="btn btn-outline" href="product-iphone-17-pro-max.html" data-i18n="btn_view">View</a>
+        </div>
+        <div class="card product">
+          <img src="img/galaxy-s24.png" alt="Samsung Galaxy S24">
+          <h3>Samsung Galaxy S24</h3>
+          <a class="btn btn-outline" href="product-galaxy-s24.html" data-i18n="btn_view">View</a>
+        </div>
+        <div class="card product">
+          <img src="img/pixel-8-pro.png" alt="Google Pixel 8 Pro">
+          <h3>Google Pixel 8 Pro</h3>
+          <a class="btn btn-outline" href="product-pixel-8-pro.html" data-i18n="btn_view">View</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>© <span id="year"></span> Phone Bazzar — All rights reserved.</footer>
+  </div>
+
+  <!-- Language Switch -->
   <script>
-    // Active menu highlight
-    const navLinks = document.querySelectorAll('nav a');
-    const currentPage = window.location.pathname.split("/").pop();
-    navLinks.forEach(link => {
-      if(link.getAttribute('href') === currentPage){
-        link.classList.add('active');
-      } else {
-        link.classList.remove('active');
+    const dict = {
+      ur: {
+        nav_shop:"دکان",
+        nav_contact:"رابطہ",
+        iphone_title:"آئی فون 17 پرو میکس",
+        iphone_tag:"پرفارمنس، کیمرا، بیٹری — ہر چیز پرو۔",
+        btn_order:"آرڈر کریں",
+        btn_viewall:"سب دیکھیں",
+        shop_title:"دکان",
+        btn_view:"دیکھیں"
+      },
+      en: {
+        nav_shop:"Shop",
+        nav_contact:"Contact",
+        iphone_title:"iPhone 17 Pro Max",
+        iphone_tag:"Performance. Camera. Battery. Everything Pro.",
+        btn_order:"Place Order",
+        btn_viewall:"View All",
+        shop_title:"Shop",
+        btn_view:"View"
       }
-    });
+    };
+    const els = [...document.querySelectorAll("[data-i18n]")];
+    const toggle = document.getElementById("langToggle");
+    const html = document.documentElement;
 
-    // Language toggle
-    const toggleBtn = document.getElementById('lang-toggle');
-    toggleBtn.addEventListener('click', () => {
-      document.querySelectorAll('[data-en]').forEach(el => {
-        const currentLang = el.textContent === el.dataset.en ? 'en' : 'ur';
-        el.textContent = currentLang === 'en' ? el.dataset.ur : el.dataset.en;
-      });
-    });
+    function setLang(code){
+      const t = dict[code];
+      els.forEach(el => el.textContent = t[el.getAttribute("data-i18n")] || el.textContent);
+      html.lang = code === "ur" ? "ur" : "en";
+      document.body.classList.toggle("rtl", code === "ur");
+      localStorage.setItem("pb_lang", code);
+    }
+    const saved = localStorage.getItem("pb_lang") || "en";
+    setLang(saved);
+    toggle.addEventListener("click", ()=> setLang(document.documentElement.lang === "en" ? "ur" : "en"));
+
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
