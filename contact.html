@@ -8,85 +8,86 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #0d0d0d;
+      background-color: #121212;
       color: #fff;
+      text-align: center;
     }
     header {
-      background: #111;
-      padding: 15px 20px;
-      text-align: center;
+      background: #1e1e1e;
+      padding: 20px;
     }
     header h1 {
       margin: 0;
-      color: #f2f2f2;
+      font-size: 2rem;
+      color: #f0a500;
     }
     nav {
-      background: #1a1a1a;
-      padding: 10px;
-      text-align: center;
+      margin-top: 10px;
     }
     nav a {
       color: #fff;
-      margin: 0 15px;
       text-decoration: none;
-      font-weight: bold;
+      margin: 0 15px;
+      font-size: 1rem;
       transition: color 0.3s;
     }
     nav a:hover {
-      color: #ff9900;
+      color: #f0a500;
     }
-    .container {
-      max-width: 600px;
-      margin: 40px auto;
+    .contact-container {
+      margin-top: 50px;
       padding: 20px;
-      background: #1a1a1a;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-      text-align: center;
     }
-    .contact-item {
-      margin: 20px 0;
-      font-size: 18px;
+    .contact-container h2 {
+      color: #f0a500;
+      margin-bottom: 20px;
     }
-    .contact-item a {
-      color: #ff9900;
+    .contact-info {
+      margin: 15px 0;
+      font-size: 1.2rem;
+    }
+    .contact-info a {
+      color: #f0a500;
       text-decoration: none;
-      font-weight: bold;
     }
-    .contact-item a:hover {
+    .contact-info a:hover {
       text-decoration: underline;
+    }
+    footer {
+      margin-top: 50px;
+      background: #1e1e1e;
+      padding: 15px;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
-
   <header>
-    <h1>📞 Contact Phone Bazzar</h1>
+    <h1>Phone Bazzar</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="deals.html">Deals</a>
+      <a href="brands.html">Brands</a>
+      <a href="contact.html">Contact</a>
+    </nav>
   </header>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="shop.html">Shop</a>
-    <a href="deals.html">Deals</a>
-    <a href="brands.html">Brands</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-
-  <div class="container">
-    <h2>Get in Touch With Us</h2>
-
-    <div class="contact-item">
-      📱 Phone: <a href="tel:+923080432842">+92 308 0432842</a>
+  <div class="contact-container">
+    <h2>Contact Us</h2>
+    <div class="contact-info">
+      📞 Phone: <a href="tel:+923080432842">+92 308 0432842</a>
     </div>
-
-    <div class="contact-item">
+    <div class="contact-info">
       📧 Email: <a href="mailto:awaisaziz8832@gmail.com">awaisaziz8832@gmail.com</a>
     </div>
-
-    <div class="contact-item">
+    <div class="contact-info">
       💬 WhatsApp: <a href="https://wa.me/923080432842" target="_blank">Chat on WhatsApp</a>
     </div>
   </div>
 
+  <footer>
+    <p>&copy; 2025 Phone Bazzar. All rights reserved.</p>
+  </footer>
 </body>
 </html>
