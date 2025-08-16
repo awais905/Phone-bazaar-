@@ -38,6 +38,7 @@
       width: 150px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.5);
       transition: transform 0.2s, box-shadow 0.2s;
+      cursor: pointer;
     }
     .brand-card:hover {
       transform: translateY(-5px);
@@ -53,6 +54,10 @@
       font-size: 1rem;
       color: #ffcc00;
     }
+    .brand-card a {
+      text-decoration: none;
+      color: inherit;
+    }
   </style>
 </head>
 <body>
@@ -63,24 +68,34 @@
 
   <div class="brands-container">
     <div class="brand-card">
-      <img src="images/apple-logo.png" alt="Apple Logo">
-      <h3>Apple</h3>
+      <a href="apple.html">
+        <img src="images/apple-logo.png" alt="Apple Logo">
+        <h3>Apple</h3>
+      </a>
     </div>
     <div class="brand-card">
-      <img src="images/samsung-logo.png" alt="Samsung Logo">
-      <h3>Samsung</h3>
+      <a href="samsung.html">
+        <img src="images/samsung-logo.png" alt="Samsung Logo">
+        <h3>Samsung</h3>
+      </a>
     </div>
     <div class="brand-card">
-      <img src="images/xiaomi-logo.png" alt="Xiaomi Logo">
-      <h3>Xiaomi</h3>
+      <a href="xiaomi.html">
+        <img src="images/xiaomi-logo.png" alt="Xiaomi Logo">
+        <h3>Xiaomi</h3>
+      </a>
     </div>
     <div class="brand-card">
-      <img src="images/oppo-logo.png" alt="Oppo Logo">
-      <h3>Oppo</h3>
+      <a href="oppo.html">
+        <img src="images/oppo-logo.png" alt="Oppo Logo">
+        <h3>Oppo</h3>
+      </a>
     </div>
     <div class="brand-card">
-      <img src="images/vivo-logo.png" alt="Vivo Logo">
-      <h3>Vivo</h3>
+      <a href="vivo.html">
+        <img src="images/vivo-logo.png" alt="Vivo Logo">
+        <h3>Vivo</h3>
+      </a>
     </div>
     <!-- Add more brands here in the same structure -->
   </div>
