@@ -7,121 +7,147 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #121212;
+      background-color: #111;
       color: #fff;
       margin: 0;
       padding: 0;
     }
+
     header {
+      background-color: #222;
+      padding: 20px;
       text-align: center;
-      padding: 2rem 0;
-      background-color: #1e1e1e;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.5);
     }
+
     header h1 {
       margin: 0;
-      font-size: 2rem;
-      color: #ff9900;
+      font-size: 28px;
     }
-    .phones-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
-      padding: 2rem;
+
+    nav {
+      background-color: #333;
+      padding: 10px;
+      text-align: center;
     }
-    .phone-card {
-      background-color: #1e1e1e;
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 18px;
+    }
+
+    nav a:hover {
+      color: #ffd700;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .card {
+      background-color: #1a1a1a;
       border-radius: 10px;
       overflow: hidden;
-      width: 220px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.5);
       text-align: center;
-      padding: 1rem;
+      padding: 15px;
+      transition: transform 0.3s;
     }
-    .phone-card img {
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
       width: 100%;
-      height: auto;
-      display: block;
-      margin-bottom: 1rem;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 10px;
     }
-    .phone-card h3 {
-      margin: 0;
-      font-size: 1.1rem;
-      color: #ffcc00;
+
+    .card h3 {
+      margin: 15px 0 10px;
     }
-    .phone-card p {
-      font-size: 0.9rem;
-      color: #ccc;
-      margin: 0.5rem 0;
+
+    .card p {
+      font-size: 14px;
+      color: #bbb;
+      margin-bottom: 15px;
     }
-    .phone-card .price {
-      color: #00cc44;
-      font-weight: bold;
-      margin: 0.5rem 0;
-    }
-    .phone-card button {
-      background-color: #ffcc00;
-      border: none;
-      padding: 0.5rem 1rem;
+
+    .btn {
+      display: inline-block;
+      background: #ffd700;
+      color: black;
+      padding: 10px 15px;
       border-radius: 5px;
-      cursor: pointer;
+      text-decoration: none;
       font-weight: bold;
-      margin-top: 0.5rem;
-      transition: background 0.2s;
+      transition: 0.3s;
     }
-    .phone-card button:hover {
-      background-color: #e6b800;
+
+    .btn:hover {
+      background: #e6c200;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #222;
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
-
   <header>
-    <h1>Samsung Phones - Hot Deals</h1>
+    <h1>Samsung Phones</h1>
   </header>
 
-  <div class="phones-container">
-    <div class="phone-card">
-      <img src="images/samsung-s24-ultra.jpg" alt="Samsung Galaxy S24 Ultra">
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="apple.html">Apple</a>
+    <a href="samsung.html">Samsung</a>
+    <a href="deals.html">Deals</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <div class="container">
+    <div class="card">
+      <img src="https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-s24-ultra-1.jpg" alt="Samsung Galaxy S24 Ultra">
       <h3>Samsung Galaxy S24 Ultra</h3>
-      <p>Flagship with Snapdragon 8 Gen 3, 200MP camera, and stunning display.</p>
-      <div class="price">PKR 360,000</div>
-      <button>Get Deal</button>
+      <p>Snapdragon 8 Gen 3, 200MP Camera, 5000mAh Battery.</p>
+      <a href="deals.html" class="btn">Get Deal</a>
     </div>
 
-    <div class="phone-card">
-      <img src="images/samsung-s24-plus.jpg" alt="Samsung Galaxy S24 Plus">
-      <h3>Samsung Galaxy S24 Plus</h3>
-      <p>Powerful performance and amazing display at a lower price.</p>
-      <div class="price">PKR 300,000</div>
-      <button>Get Deal</button>
-    </div>
-
-    <div class="phone-card">
-      <img src="images/samsung-s24.jpg" alt="Samsung Galaxy S24">
+    <div class="card">
+      <img src="https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-s24-1.jpg" alt="Samsung Galaxy S24">
       <h3>Samsung Galaxy S24</h3>
-      <p>Sleek design, high refresh rate, and solid performance.</p>
-      <div class="price">PKR 260,000</div>
-      <button>Get Deal</button>
+      <p>Dynamic AMOLED 2X Display, 50MP Triple Camera, 4700mAh.</p>
+      <a href="deals.html" class="btn">Get Deal</a>
     </div>
 
-    <div class="phone-card">
-      <img src="images/samsung-zfold5.jpg" alt="Samsung Galaxy Z Fold 5">
-      <h3>Samsung Galaxy Z Fold 5</h3>
-      <p>Foldable innovation with multitasking and premium build.</p>
-      <div class="price">PKR 500,000</div>
-      <button>Get Deal</button>
+    <div class="card">
+      <img src="https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-z-flip5-1.jpg" alt="Samsung Galaxy Z Flip5">
+      <h3>Samsung Galaxy Z Flip5</h3>
+      <p>Foldable AMOLED Display, Snapdragon 8 Gen 2, 3700mAh.</p>
+      <a href="deals.html" class="btn">Get Deal</a>
     </div>
 
-    <div class="phone-card">
-      <img src="images/samsung-zflip5.jpg" alt="Samsung Galaxy Z Flip 5">
-      <h3>Samsung Galaxy Z Flip 5</h3>
-      <p>Compact foldable with powerful performance and stylish look.</p>
-      <div class="price">PKR 300,000</div>
-      <button>Get Deal</button>
+    <div class="card">
+      <img src="https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-a54-5g-1.jpg" alt="Samsung Galaxy A54">
+      <h3>Samsung Galaxy A54</h3>
+      <p>Exynos 1380, 50MP Camera, 5000mAh Battery, Budget Friendly.</p>
+      <a href="deals.html" class="btn">Get Deal</a>
     </div>
   </div>
 
+  <footer>
+    <p>© 2025 Phone Bazzar. All rights reserved.</p>
+  </footer>
 </body>
 </html>
