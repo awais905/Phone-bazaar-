@@ -3,130 +3,125 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Deals - Phone Bazaar</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Deals - Phone Bazzar</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #0d0d0d;
-      color: #f5f5f5;
+      background-color: #121212;
+      color: #fff;
     }
     header {
-      background: #111;
-      padding: 15px 30px;
+      background-color: #1f1f1f;
+      padding: 15px;
       text-align: center;
-      font-size: 1.8rem;
-      font-weight: bold;
-      color: #ffcc00;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.5);
     }
-    .deals-container {
+    header h1 {
+      margin: 0;
+      color: #f5f5f5;
+    }
+    nav {
+      background-color: #333;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #ff9800;
+    }
+    .deals {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 20px;
-      padding: 30px;
+      padding: 20px;
     }
     .deal-card {
-      background: #1a1a1a;
+      background: #1f1f1f;
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.7);
-      padding: 20px;
-      transition: transform 0.3s ease;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+      transition: transform 0.3s;
     }
     .deal-card:hover {
-      transform: translateY(-8px);
+      transform: scale(1.05);
     }
     .deal-card img {
       width: 100%;
-      height: 220px;
-      object-fit: contain;
-      border-radius: 8px;
+      height: 200px;
+      object-fit: cover;
     }
-    .deal-card h3 {
-      margin: 15px 0 8px;
-      font-size: 1.4rem;
-      color: #ffcc00;
+    .deal-info {
+      padding: 15px;
     }
-    .deal-card p {
-      font-size: 0.95rem;
-      color: #dcdcdc;
-      margin-bottom: 10px;
+    .deal-info h3 {
+      margin: 0 0 10px;
+      font-size: 20px;
     }
-    .deal-price {
-      font-size: 1.2rem;
-      font-weight: bold;
-      color: #00e676;
-      margin-bottom: 15px;
+    .deal-info p {
+      font-size: 14px;
+      color: #ccc;
     }
-    .btn {
+    .deal-info a {
       display: inline-block;
-      background: #ffcc00;
-      color: #111;
-      padding: 10px 18px;
-      border-radius: 8px;
+      margin-top: 10px;
+      padding: 10px 15px;
+      background: #ff9800;
+      color: #000;
       text-decoration: none;
       font-weight: bold;
-      transition: background 0.3s ease;
+      border-radius: 8px;
+      transition: background 0.3s;
     }
-    .btn:hover {
-      background: #e6b800;
-    }
-    footer {
-      background: #111;
-      text-align: center;
-      padding: 15px;
-      font-size: 0.9rem;
-      margin-top: 20px;
-      color: #999;
+    .deal-info a:hover {
+      background: #e68900;
     }
   </style>
 </head>
 <body>
   <header>
-    📱 Phone Bazaar - Hot Deals
+    <h1>Exclusive Deals</h1>
   </header>
 
-  <div class="deals-container">
-    <!-- Deal 1 -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="deals.html">Deals</a>
+    <a href="brands.html">Brands</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <section class="deals">
     <div class="deal-card">
-      <img src="https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-15-pro.jpg" alt="iPhone 15 Pro">
-      <h3>iPhone 15 Pro</h3>
-      <p>Latest iPhone with A17 Pro chip, titanium build, and Pro camera system.</p>
-      <div class="deal-price">PKR 350,000</div>
-      <a href="order.html" class="btn">Get Deal</a>
+      <img src="https://via.placeholder.com/400x200" alt="iPhone 16 Pro Max">
+      <div class="deal-info">
+        <h3>iPhone 16 Pro Max</h3>
+        <p>Get the latest iPhone at the best price.</p>
+        <a href="contact.html">Get Deal</a>
+      </div>
     </div>
 
-    <!-- Deal 2 -->
     <div class="deal-card">
-      <img src="https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-s24-ultra-5g.jpg" alt="Samsung S24 Ultra">
-      <h3>Samsung Galaxy S24 Ultra</h3>
-      <p>6.8" Dynamic AMOLED 2X, Snapdragon 8 Gen 3, quad cameras 200MP power.</p>
-      <div class="deal-price">PKR 290,000</div>
-      <a href="order.html" class="btn">Get Deal</a>
+      <img src="https://via.placeholder.com/400x200" alt="Samsung Galaxy S25">
+      <div class="deal-info">
+        <h3>Samsung Galaxy S25</h3>
+        <p>Exclusive Samsung deal just for you.</p>
+        <a href="contact.html">Get Deal</a>
+      </div>
     </div>
 
-    <!-- Deal 3 -->
     <div class="deal-card">
-      <img src="https://fdn2.gsmarena.com/vv/bigpic/xiaomi-13-ultra.jpg" alt="Xiaomi 13 Ultra">
-      <h3>Xiaomi 13 Ultra</h3>
-      <p>Flagship camera beast with Leica optics, Snapdragon 8 Gen 2, 1TB storage.</p>
-      <div class="deal-price">PKR 210,000</div>
-      <a href="order.html" class="btn">Get Deal</a>
+      <img src="https://via.placeholder.com/400x200" alt="Google Pixel 9">
+      <div class="deal-info">
+        <h3>Google Pixel 9</h3>
+        <p>Experience pure Android with special discounts.</p>
+        <a href="contact.html">Get Deal</a>
+      </div>
     </div>
-
-    <!-- Deal 4 -->
-    <div class="deal-card">
-      <img src="https://fdn2.gsmarena.com/vv/bigpic/oneplus-12.jpg" alt="OnePlus 12">
-      <h3>OnePlus 12</h3>
-      <p>Premium flagship with Snapdragon 8 Gen 3, AMOLED 120Hz, Hasselblad cam.</p>
-      <div class="deal-price">PKR 180,000</div>
-      <a href="order.html" class="btn">Get Deal</a>
-    </div>
-  </div>
-
-  <footer>
-    &copy; 2025 Phone Bazaar | All Rights Reserved
-  </footer>
+  </section>
 </body>
 </html>
