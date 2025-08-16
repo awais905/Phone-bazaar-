@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brands - Phone Bazzar</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      text-align: center;
+      padding: 2rem 0;
+      background-color: #1e1e1e;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+      color: #ff9900;
+    }
+    .brands-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      padding: 2rem;
+    }
+    .brand-card {
+      background-color: #1e1e1e;
+      padding: 1rem;
+      border-radius: 10px;
+      text-align: center;
+      width: 150px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .brand-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.7);
+    }
+    .brand-card img {
+      max-width: 100px;
+      height: auto;
+      margin-bottom: 0.5rem;
+    }
+    .brand-card h3 {
+      margin: 0;
+      font-size: 1rem;
+      color: #ffcc00;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Our Brands</h1>
+  </header>
+
+  <div class="brands-container">
+    <div class="brand-card">
+      <img src="images/apple-logo.png" alt="Apple Logo">
+      <h3>Apple</h3>
+    </div>
+    <div class="brand-card">
+      <img src="images/samsung-logo.png" alt="Samsung Logo">
+      <h3>Samsung</h3>
+    </div>
+    <div class="brand-card">
+      <img src="images/xiaomi-logo.png" alt="Xiaomi Logo">
+      <h3>Xiaomi</h3>
+    </div>
+    <div class="brand-card">
+      <img src="images/oppo-logo.png" alt="Oppo Logo">
+      <h3>Oppo</h3>
+    </div>
+    <div class="brand-card">
+      <img src="images/vivo-logo.png" alt="Vivo Logo">
+      <h3>Vivo</h3>
+    </div>
+    <!-- Add more brands here in the same structure -->
+  </div>
+
+</body>
+</html>
